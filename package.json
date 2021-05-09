@@ -8,6 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "find-up": "^5.0.0",
+    "fs": "^0.0.1-security",
     "instagram-web-api": "^2.2.2",
     "next": "10.x",
     "react": "17.x",
