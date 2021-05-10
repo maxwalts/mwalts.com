@@ -12,7 +12,11 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to my page.
+          Welcome to {" "}
+          <div className={styles.tooltip}> my
+            <span className={styles.tooltiptext}>Max Walts mwalts@umich.edu</span>
+          </div> 
+          {" "} page.
         </h1>
 
         <p className={styles.description}>
@@ -20,7 +24,7 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="" className={styles.card}>
+          <a href="/blog" className={styles.card}>
             <h3>Blog &rarr;</h3>
           </a>
 
@@ -33,7 +37,7 @@ export default function Home() {
               href=""
               className={styles.card}
             >
-              <h3>Doodles &rarr;</h3>
+              <h3>Gallery &rarr;</h3>
             </a>
           </Link>
 

@@ -11,7 +11,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-            uhh idk 
+            since 2017
         </p>
 
         
