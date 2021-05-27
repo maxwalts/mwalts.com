@@ -1,7 +1,7 @@
 
 import styles from '../styles/Home.module.css'
-import Link from 'next/Link'
-import { Document, Page } from 'react-pdf'
+import Link from 'next/link'
+import { Document } from 'react-pdf'
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
             Under construction. Check back soon.
         </p>
 
-        <Document file="public/Resume.pdf" />
+        <Document file="/public/Resume.pdf" />
 
         
       </main>

@@ -25,6 +25,7 @@
     "react-player": "^2.9.0",
     "react-svg": "^13.0.6",
     "semantic-ui-react": "^2.0.3",
+    "webpack": "^5.37.1",
     "yarn": "^1.22.10"
   },
   "devDependencies": {
