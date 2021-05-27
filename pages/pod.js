@@ -1,7 +1,7 @@
 
 import styles from '../styles/Home.module.css'
 import ReactPlayer from "react-player"
-import Link from 'next/Link'
+import Link from 'next/link'
 
 export default function Home() {
   return (
