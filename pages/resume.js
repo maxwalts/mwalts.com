@@ -1,6 +1,7 @@
 
 import styles from '../styles/Home.module.css'
 import Link from 'next/Link'
+import { Document, Page } from 'react-pdf'
 
 export default function Home() {
   return (
@@ -12,8 +13,10 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-            
+            Under construction. Check back soon.
         </p>
+
+        <Document file="public/Resume.pdf" />
 
         
       </main>

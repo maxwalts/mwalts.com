@@ -12,9 +12,16 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          When words cut it
+          
         </p>
 
+        <div className={styles.grid}>
+          <a href="/posts/1" >
+            <h2>The first one</h2>
+            <p>May 2021</p>
+          </a>
+
+        </div>
         
       </main>
 
