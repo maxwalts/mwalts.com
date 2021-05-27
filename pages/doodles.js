@@ -7,11 +7,11 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Gallery
+          Doodles
         </h1>
 
         <p className={styles.description}>
-          When words don't cut it
+          Sometimes words just aren't enough
         </p>
 
         

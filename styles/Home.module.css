@@ -148,6 +148,11 @@
   line-height: 1.5;
 }
 
+.icon {
+  font-size: 2.5em;
+  margin: 3rem;
+}
+
 .logo {
   height: 1em;
 }

@@ -1,5 +1,6 @@
 
 import styles from '../styles/Home.module.css'
+import Link from 'next/Link'
 
 export default function Home() {
   return (
@@ -11,14 +12,14 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-            since 2017
+            
         </p>
 
         
       </main>
 
       <footer className={styles.footer}>
-
+        <Link href="/">&larr; Go home</Link>
       </footer>
     </div>
   )

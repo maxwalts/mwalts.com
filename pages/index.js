@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Link from 'next/link'
+import {FaLinkedin} from 'react-icons/fa';
+import {FaTwitter} from 'react-icons/fa';
+import {FaGithub} from 'react-icons/fa';
+
 
 export default function Home() {
   return (
@@ -32,15 +35,6 @@ export default function Home() {
             <h3>Pod &rarr;</h3>
           </a>
 
-          <Link href="/doodles">
-            <a
-              href=""
-              className={styles.card}
-            >
-              <h3>Gallery &rarr;</h3>
-            </a>
-          </Link>
-
           <a
             href="/resume"
             className={styles.card}
@@ -51,6 +45,17 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
+
+          <a className={styles.icon} href="https://www.linkedin.com/in/max-walts" >
+            <FaLinkedin />
+          </a>
+          <a className={styles.icon} href="https://www.twitter.com/maxcwa" >
+            <FaTwitter />
+          </a>
+          <a className={styles.icon} href="https://www.github.com/maxwalts" >
+            <FaGithub />
+          </a>  
+
 
       </footer>
     </div>
