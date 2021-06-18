@@ -13,12 +13,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main className={styles.mainnounderline}>
         <h1 className={styles.title}>
           Welcome to {" "}
-          <div className={styles.tooltip}> my
+          <a className={styles.tooltip}> my
             <span className={styles.tooltiptext}>Max Walts mwalts@umich.edu</span>
-          </div> 
+          </a> 
           {" "} website.
         </h1>
 

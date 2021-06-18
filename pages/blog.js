@@ -8,20 +8,21 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Blog
+          Blog.
         </h1>
 
         <p className={styles.description}>
           
         </p>
 
-        <div className={styles.grid}>
           <a href="/posts/1" >
             <h2>The first one</h2>
-            <p>May 2021</p>
           </a>
 
-        </div>
+          <a href="/posts/2" >
+            <h2>The first summer on my own</h2>
+          </a>
+
         
       </main>
 
