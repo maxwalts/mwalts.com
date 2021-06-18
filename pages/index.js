@@ -19,11 +19,11 @@ export default function Home() {
           <div className={styles.tooltip}> my
             <span className={styles.tooltiptext}>Max Walts mwalts@umich.edu</span>
           </div> 
-          {" "} page.
+          {" "} website.
         </h1>
 
         <p className={styles.description}>
-          Take a look around
+          Take a look around using the cards below.
         </p>
 
         <div className={styles.grid}>

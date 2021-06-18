@@ -1,7 +1,6 @@
 
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
-import { Document } from 'react-pdf'
 
 export default function Home() {
   return (

@@ -5,7 +5,7 @@ export default function Post1() {
     return (
         <div className={styles.container}>
 
-            <main className={styles.main}>
+            <main className={styles.post}>
                 <h1 className={styles.title}>
                     The first one
                 </h1>
