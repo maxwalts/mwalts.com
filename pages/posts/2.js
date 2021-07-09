@@ -9,7 +9,7 @@ export default function Post1() {
                 <h1 className={styles.title}>
                     The first summer on my own
                 </h1>
-                <p>
+                <p className={styles.description}>
                     Perspective of my time at Michigan as of June 2021.
                 </p>
 

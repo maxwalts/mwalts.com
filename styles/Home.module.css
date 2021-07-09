@@ -184,6 +184,11 @@
   height: 1em;
 }
 
+.poem {
+  text-align: center;
+  font-style: italic;
+}
+
 .post {
   padding-top: 3em;
   padding-bottom: 5em;
