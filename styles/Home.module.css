@@ -82,7 +82,6 @@
 .tooltip {
   position: relative;
   display: inline-block;
-  color:#0070f3;
 }
 .tooltip a:hover,
 .tooltip a:focus,

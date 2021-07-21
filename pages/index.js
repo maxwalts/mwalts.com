@@ -16,9 +16,9 @@ export default function Home() {
       <main className={styles.mainnounderline}>
         <h1 className={styles.title}>
           Welcome to {" "}
-          <a className={styles.tooltip}> my
+          <span className={styles.tooltip}> my
             <span className={styles.tooltiptext}>Max Walts mwalts@umich.edu</span>
-          </a> 
+          </span> 
           {" "} website.
         </h1>
 
