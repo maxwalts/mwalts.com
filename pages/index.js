@@ -39,7 +39,7 @@ export default function Home() {
             href="/resume"
             className={styles.card}
           >
-            <h3>Resume &rarr;</h3>
+            <h3>Resume/CV&rarr;</h3>
           </a>
         </div>
       </main>
