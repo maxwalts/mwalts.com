@@ -30,6 +30,10 @@ export default function Home() {
           <a href="/posts/4" >
             <h2>Praising the Buddha</h2>
           </a>
+
+          <a href="/posts/5" >
+            <h2>The Pursuit of Happiness</h2>
+          </a>
         
       </main>
 
