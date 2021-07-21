@@ -32,7 +32,7 @@ export default function Home() {
           </a>
 
           <a href="/posts/5" >
-            <h2>The Pursuit of Happiness</h2>
+            <h2>The Pursuit of Happyness</h2>
           </a>
         
       </main>
