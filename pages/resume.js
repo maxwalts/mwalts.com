@@ -21,7 +21,7 @@ export default function Home() {
             
         </p>
 
-        <Document file="resume.pdf">
+        <Document file="/static/resume.pdf">
           <Page pageNumber={1}/>
         </Document> 
 
