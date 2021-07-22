@@ -15,25 +15,28 @@ export default function Home() {
           
         </p>
 
-          <a href="/posts/1" >
-            <h2>The first one</h2>
-          </a>
-
-          <a href="/posts/2" >
-            <h2>The first summer on my own</h2>
-          </a>
-
-          <a href="/posts/3" >
-            <h2>A Dharma of Happiness</h2>
+          <a href="/posts/5" >
+            <h2>The Pursuit of Happyness</h2>
           </a>
 
           <a href="/posts/4" >
             <h2>Praising the Buddha</h2>
           </a>
 
-          <a href="/posts/5" >
-            <h2>The Pursuit of Happyness</h2>
+
+          <a href="/posts/3" >
+            <h2>A Dharma of Happiness</h2>
           </a>
+
+         
+          <a href="/posts/2" >
+            <h2>The first summer on my own</h2>
+          </a>
+
+          <a href="/posts/1" >
+            <h2>The first one</h2>
+          </a>
+
         
       </main>
 
