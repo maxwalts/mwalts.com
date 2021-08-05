@@ -32,7 +32,7 @@ export default function Home() {
             <h3>Blog &rarr;</h3>
           </a>
 
-          <a href="/pod" className={styles.card}>
+          <a href="https://rss.com/podcasts/maxeffect/" className={styles.card}>
             <h3>Pod &rarr;</h3>
           </a>
 

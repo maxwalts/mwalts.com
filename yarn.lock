@@ -6096,6 +6096,11 @@ react-refresh@0.8.3:
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.8.3.tgz"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
+react-rss@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-rss/-/react-rss-2.0.0.tgz#85029d357203be1e5b5abb5ea93e11c684b544f1"
+  integrity sha512-AakIoE27rQ2OxuTziZXmaYY9Klj9yHpV7GisokmzzSp8K3Ln/YwvPV6ZWF8fq82+NYwPPRe4VrK4FKqeBBo0VQ==
+
 react-svg@^13.0.6:
   version "13.0.6"
   resolved "https://registry.npmjs.org/react-svg/-/react-svg-13.0.6.tgz"
