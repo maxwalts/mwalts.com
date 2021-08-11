@@ -14,27 +14,30 @@ export default function Home() {
         <p className={styles.description}>
           
         </p>
+          <a href="/posts/6" >
+            <h2>Being Consistent</h2>
+          </a>
 
           <a href="/posts/5" >
             <h2>The Pursuit of Happyness</h2>
           </a>
 
           <a href="/posts/4" >
-            <h2>Praising the Buddha</h2>
+            <h2>Review pt2: Peace is Every Step by Thich Naht Hanh</h2>
           </a>
 
 
           <a href="/posts/3" >
-            <h2>A Dharma of Happiness</h2>
+            <h2>Review: Peace is Every Step by Thich Naht Hanh</h2>
           </a>
 
          
           <a href="/posts/2" >
-            <h2>The first summer on my own</h2>
+            <h2>Summertime</h2>
           </a>
 
           <a href="/posts/1" >
-            <h2>The first one</h2>
+            <h2>Hello, World!</h2>
           </a>
 
         

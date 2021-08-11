@@ -7,13 +7,17 @@ export default function Post1() {
 
             <main className={styles.main}>
                 <h1 className={styles.title}>
-                    A Dharma of Happiness
+                    Review: Peace is Every Step by Thich Naht Hanh
                 </h1>
                 <p className={styles.description}>
                     Peace is every step, and happiness exists inside yourself. 
                 </p>
 
                 <p className={styles.post}>
+                <p>
+                    Happy Wednesday!
+                    </p>
+
                     <p>
                     I find the most difficult part of change to be the rememberance of the initial commitment. 
                     On my path to self-improvement, I have seeked out many teachers of diverse backgrounds. 
@@ -75,6 +79,14 @@ export default function Post1() {
 <p>so that I can live in peace, joy, and freedom every day, </p>
 <p>fulfilling the deepest aspiration as your disciple whom you trust and love. </p>
 <p>(Bell, Bell) </p>
+
+</p>
+{}
+<p>
+    Sincerely,
+</p>
+<p>
+    Max
 </p>
                 </p>
                 

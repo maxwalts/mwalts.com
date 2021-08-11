@@ -14,6 +14,10 @@ export default function Post1() {
                 </p>
 
                 <p className={styles.post}>
+                <p>
+                    Happy Wednesday!
+                    </p>
+
                     <p>
                     Everyone has the potential to be a buddha. We say that all people have a buddha nature. In every person's unique journey, they will encounter much suffering and hardship.
                     The buddhas of all places and all times serve to support a single man in their path to enlightenment. No buddha is finished with their work until they have helped all who suffer reach enlightenment and peace. 
@@ -64,6 +68,13 @@ export default function Post1() {
                     </p>
 
                 </p>
+                {}
+<p>
+    Sincerely,
+</p>
+<p>
+    Max
+</p>
                 </p>
                 
                 

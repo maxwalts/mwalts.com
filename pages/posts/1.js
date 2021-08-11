@@ -12,6 +12,9 @@ export default function Post1() {
                 <p className={styles.description}>
                     What I'm up to this summer, and why I'm starting this blog.
                 </p>
+                <p>
+                    Happy Wednesday!
+                    </p>
 
                 <p>
                     There are many reasons to start a blog; some being more compelling than others. I would like to think that my work
@@ -45,7 +48,13 @@ export default function Post1() {
                     You can hear about some of the books I'm reading over on the Pod page (mwalts.com/pod), but I expect to write about some of
                     the texts here as well, since I've already burned through a few dozen of the books I wanted to read this spring.
                 </p>
-                
+                {}
+<p>
+    Sincerely,
+</p>
+<p>
+    Max
+</p>
                 
             </main>
 

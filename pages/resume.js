@@ -21,7 +21,7 @@ export default function Home() {
             
         </p>
 
-        <Document style={{margin: 100, position: 'absolute', left: '50%', top: '50%'}} file="/static/resume.pdf">
+        <Document style={{margin: 100, position: 'absolute', left: '50%', top: '50%'}} file="/static/walts,max-CV.pdf">
           <Page pageNumber={1}/>
         </Document> 
 

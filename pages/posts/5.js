@@ -15,8 +15,11 @@ export default function Post1() {
                 </p>
 
                 <p className={styles.post}>
-                    <p>
+                <p>
+                    Happy Wednesday!
+                    </p>
 
+                    <p>
                 I love that movie. Will Smith and his kid hold a special place in my mind for making it what it was. There are a few lessons to be learned; the most important being the importance of finding virtues and holding on to them with an unbreakable grip. 
                     </p>
 <p>
@@ -42,6 +45,13 @@ These are some ideas that come from Dale Carnegie in his writing, so these virtu
 <p>
 
 The opposite of a virtue is a vice. Vices are the behaviors driven by chaos, impulse, and greed; conducive to suffering and failure. Vices may have to get their own post... there's a lot to get into there. There are many vices which I have picked up and learned to purge during my short 20 years here. I'd like to reflect on some of them — why I encountered them and how I left them behind in my path of self-improvement.
+</p>
+{}
+<p>
+    Sincerely,
+</p>
+<p>
+    Max
 </p>
 
                 </p>

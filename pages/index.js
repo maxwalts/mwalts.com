@@ -17,14 +17,15 @@ export default function Home() {
       <main className={styles.mainnounderline}>
         <h1 className={styles.title}>
           Welcome to {" "}
-          <span className={styles.tooltip}> my
+          <span className={styles.tooltip}> Max's
             <span className={styles.tooltiptext}>Max Walts mwalts@umich.edu</span>
           </span> 
-          {" "} website.
+          {" "} website!
         </h1>
 
         <p className={styles.description}>
-          Take a look around using the cards below.
+          Here, you'll find a weekly-ish blog and a link to my podcast. 
+          <p>To learn more about be or to get in contact, see my CV or Socials below.</p>
         </p>
 
         <div className={styles.grid}>
