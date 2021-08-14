@@ -1,4 +1,4 @@
-
+import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import { Document, Page, pdfjs} from 'react-pdf'
@@ -6,11 +6,15 @@ import { Document, Page, pdfjs} from 'react-pdf'
 
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
+
 export default function Home() {
 
   
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Max Walts - CV</title> 
+      </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
@@ -21,8 +25,8 @@ export default function Home() {
             
         </p>
 
-        <Document style={{margin: 100, position: 'absolute', left: '50%', top: '50%'}} file="/static/walts,max-CV.pdf">
-          <Page pageNumber={1}/>
+        <Document file="/static/walts,max-CV.pdf">
+          <Page size="A4" style={{width: 500}} pageNumber={1}/>
         </Document> 
 
         
