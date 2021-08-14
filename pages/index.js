@@ -10,22 +10,19 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>mwalts.com</title>
+        <title>Max Walts - Homepage</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.mainnounderline}>
         <h1 className={styles.title}>
-          Welcome to {" "}
-          <span className={styles.tooltip}> Max's
-            <span className={styles.tooltiptext}>Max Walts mwalts@umich.edu</span>
-          </span> 
-          {" "} website!
+          Welcome to Max's home on the web!
         </h1>
 
         <p className={styles.description}>
-          Here, you'll find a weekly-ish blog and a link to my podcast. 
-          <p>To learn more about be or to get in contact, see my CV or Socials below.</p>
+            Check back weekly for updates to the blog and the Max Effect podcast.
+          <p>To learn more about Max Walts or get in contact, see the CV and Socials below.</p>
+          <p>Have fun and be well!</p>
         </p>
 
         <div className={styles.grid}>
