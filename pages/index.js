@@ -30,7 +30,7 @@ export default function Home() {
           <a className={styles.icon} href="https://www.linkedin.com/in/max-walts" >
             <FaLinkedin />
           </a>
-          <a className={styles.icon} href="https://www.twitter.com/maxcwa" >
+          <a className={styles.icon} href="https://www.twitter.com/mwalts0" >
             <FaTwitter />
           </a>
           <a className={styles.icon} href="https://www.github.com/maxwalts" >
