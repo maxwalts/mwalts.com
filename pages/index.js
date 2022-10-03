@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import {FaLinkedin} from 'react-icons/fa';
-import {FaTwitter} from 'react-icons/fa';
-import {FaGithub} from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
+import { FaTwitter } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 
 
 export default function Home() {
@@ -21,21 +21,20 @@ export default function Home() {
 
         <div className={styles.grid}>
 
-
         </div>
       </main>
 
       <footer className={styles.footer}>
 
-          <a className={styles.icon} href="https://www.linkedin.com/in/max-walts" >
-            <FaLinkedin />
-          </a>
-          <a className={styles.icon} href="https://www.twitter.com/mwalts0" >
-            <FaTwitter />
-          </a>
-          <a className={styles.icon} href="https://www.github.com/maxwalts" >
-            <FaGithub />
-          </a>  
+        <a className={styles.icon} href="https://www.linkedin.com/in/max-walts" >
+          <FaLinkedin />
+        </a>
+        <a className={styles.icon} href="https://www.twitter.com/mwalts0" >
+          <FaTwitter />
+        </a>
+        <a className={styles.icon} href="https://www.github.com/maxwalts" >
+          <FaGithub />
+        </a>
 
 
       </footer>

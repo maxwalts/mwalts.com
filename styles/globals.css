@@ -14,3 +14,5 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@import "~react-image-gallery/styles/css/image-gallery.css";
