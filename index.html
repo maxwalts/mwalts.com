@@ -74,7 +74,7 @@
         }
 
         #gallery img:not(.loaded) {
-            opacity: 0.3;
+            object-position: -99999px 0;
         }
 
         #gallery img.loaded {
@@ -83,7 +83,7 @@
 
         @keyframes fade-in {
             from {
-                opacity: 0.3;
+                opacity: 0;
             }
         }
 
@@ -372,37 +372,32 @@
         </summary>
         <div class="photo-scroll">
             <div id="gallery">
-                <img src="images/DSCF2696.jpg" alt="DSCF2696.jpg" width="1333" height="2000" loading="lazy" />
-                <img src="images/IMG_5262.jpg" alt="IMG_5262.jpg" width="1333" height="2000" loading="lazy" />
-                <img src="images/IMG_5264.jpg" alt="IMG_5264.jpg" width="2000" height="1333" loading="lazy" />
-                <img src="images/IMG_5270.jpg" alt="IMG_5270.jpg" width="2000" height="1333" loading="lazy" />
-                <img src="images/IMG_4844.jpg" alt="IMG_4844.jpg" width="2000" height="1333" loading="lazy" />
-                <img src="images/IMG_4863-2.jpg" alt="IMG_4863-2.jpg" width="2000" height="1333" loading="lazy" />
-                <img src="images/IMG_4863.jpg" alt="IMG_4863.jpg" width="2000" height="1333" loading="lazy" />
-                <img src="images/IMG_4873-2.jpg" alt="IMG_4873-2.jpg" width="2000" height="1333" loading="lazy" />
-                <img src="images/IMG_4873.jpg" alt="IMG_4873.jpg" width="2000" height="1333" loading="lazy" />
-                <img src="images/IMG_4880-2.jpg" alt="IMG_4880-2.jpg" width="2000" height="1333" loading="lazy" />
-                <img src="images/IMG_4880.jpg" alt="IMG_4880.jpg" width="2000" height="1333" loading="lazy" />
-                <img src="images/IMG_4960-2.jpg" alt="IMG_4960-2.jpg" width="2000" height="1333" loading="lazy" />
-                <img src="images/IMG_4960.jpg" alt="IMG_4960.jpg" width="2000" height="1333" loading="lazy" />
-                <img src="images/DSCF5846.jpg" alt="DSCF5846.jpg" width="1333" height="2000" loading="lazy" />
-                <img src="images/IMG_4978.jpg" alt="IMG_4978.jpg" width="2000" height="1333" loading="lazy" />
-                <img src="images/IMG_5006.jpg" alt="IMG_5006.jpg" width="1333" height="2000" loading="lazy" />
-                <img src="images/IMG_5065.jpg" alt="IMG_5065.jpg" width="2000" height="1333" loading="lazy" />
-                <img src="images/IMG_5334.jpg" alt="IMG_5334.jpg" width="2000" height="1333" loading="lazy" />
-                <img src="images/IMG_5373.jpg" alt="IMG_5373.jpg" width="2000" height="1333" loading="lazy" />
-                <img src="images/IMG_5384-2.jpg" alt="IMG_5384-2.jpg" width="2000" height="1333" loading="lazy" />
-                <img src="images/IMG_5443.jpg" alt="IMG_5443.jpg" width="2000" height="1600" loading="lazy" />
-                <img src="images/IMG_5591.jpg" alt="IMG_5591.jpg" width="1600" height="2000" loading="lazy" />
-                <img src="images/IMG_5619.jpg" alt="IMG_5619.jpg" width="2000" height="1600" loading="lazy" />
-                <img src="images/IMG_5673-Enhanced-NR.jpg" alt="IMG_5673-Enhanced-NR.jpg" width="2000" height="1600" loading="lazy" />
-                <img src="images/IMG_5769.jpg" alt="IMG_5769.jpg" width="1600" height="2000" loading="lazy" />
-                <img src="images/IMG_5882.jpg" alt="IMG_5882.jpg" width="2000" height="1600" loading="lazy" />
-                <img src="images/IMG_5953.jpg" alt="IMG_5953.jpg" width="2000" height="1600" loading="lazy" />
-                <img src="images/IMG_6371.jpg" alt="IMG_6371.jpg" width="2000" height="1333" loading="lazy" />
-                <img src="images/IMG_6404-2.jpg" alt="IMG_6404-2.jpg" width="2000" height="1600" loading="lazy" />
-                <img src="images/IMG_6450.jpg" alt="IMG_6450.jpg" width="2000" height="1600" loading="lazy" />
-                <img src="images/IMG_6533-3.jpg" alt="IMG_6533-3.jpg" width="1600" height="2000" loading="lazy" />
+                <img src="images/thumbs/DSCF2696.jpg" alt="DSCF2696.jpg" width="1333" height="2000" loading="lazy" />
+                <img src="images/thumbs/IMG_5262.jpg" alt="IMG_5262.jpg" width="1333" height="2000" loading="lazy" />
+                <img src="images/thumbs/IMG_5264.jpg" alt="IMG_5264.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/thumbs/IMG_5270.jpg" alt="IMG_5270.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/thumbs/IMG_4844.jpg" alt="IMG_4844.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/thumbs/IMG_4873.jpg" alt="IMG_4873.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/thumbs/IMG_4880-2.jpg" alt="IMG_4880-2.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/thumbs/IMG_4960.jpg" alt="IMG_4960.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/thumbs/DSCF5846.jpg" alt="DSCF5846.jpg" width="1333" height="2000" loading="lazy" />
+                <img src="images/thumbs/IMG_4978.jpg" alt="IMG_4978.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/thumbs/IMG_5006.jpg" alt="IMG_5006.jpg" width="1333" height="2000" loading="lazy" />
+                <img src="images/thumbs/IMG_5065.jpg" alt="IMG_5065.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/thumbs/IMG_5334.jpg" alt="IMG_5334.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/thumbs/IMG_5373.jpg" alt="IMG_5373.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/thumbs/IMG_5384-2.jpg" alt="IMG_5384-2.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/thumbs/IMG_5443.jpg" alt="IMG_5443.jpg" width="2000" height="1600" loading="lazy" />
+                <img src="images/thumbs/IMG_5591.jpg" alt="IMG_5591.jpg" width="1600" height="2000" loading="lazy" />
+                <img src="images/thumbs/IMG_5619.jpg" alt="IMG_5619.jpg" width="2000" height="1600" loading="lazy" />
+                <img src="images/thumbs/IMG_5673-Enhanced-NR.jpg" alt="IMG_5673-Enhanced-NR.jpg" width="2000" height="1600" loading="lazy" />
+                <img src="images/thumbs/IMG_5769.jpg" alt="IMG_5769.jpg" width="1600" height="2000" loading="lazy" />
+                <img src="images/thumbs/IMG_5882.jpg" alt="IMG_5882.jpg" width="2000" height="1600" loading="lazy" />
+                <img src="images/thumbs/IMG_5953.jpg" alt="IMG_5953.jpg" width="2000" height="1600" loading="lazy" />
+                <img src="images/thumbs/IMG_6371.jpg" alt="IMG_6371.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/thumbs/IMG_6404-2.jpg" alt="IMG_6404-2.jpg" width="2000" height="1600" loading="lazy" />
+                <img src="images/thumbs/IMG_6450.jpg" alt="IMG_6450.jpg" width="2000" height="1600" loading="lazy" />
+                <img src="images/thumbs/IMG_6533-3.jpg" alt="IMG_6533-3.jpg" width="1600" height="2000" loading="lazy" />
             </div>
         </div>
         <p>Follow my photography Instagram: <a href="https://www.instagram.com/maks.eon/" target="_blank">@maks.eon</a>
@@ -478,11 +473,19 @@
         });
 
         document.querySelectorAll("#gallery img").forEach(img => {
-            if (img.complete) img.classList.add("loaded");
-            else img.onload = img.onerror = () => img.classList.add("loaded");
+            const show = () => img.classList.add("loaded");
+            if (img.complete) show();
+            else {
+                img.onload = () => img.decode().then(show, show);
+                img.onerror = show;
+            }
             img.onclick = () => {
                 img.classList.toggle("zoomed");
-                if (img.classList.contains("zoomed")) track("zoom-" + img.alt, "Photo zoom");
+                if (!img.classList.contains("zoomed")) return;
+                track("zoom-" + img.alt, "Photo zoom");
+                const full = new Image();
+                full.src = img.src.replace("/thumbs/", "/");
+                full.decode().then(() => img.src = full.src, () => {});
             };
         });
 
