@@ -192,6 +192,45 @@
             position: relative;
         }
 
+        .embed iframe {
+            display: block;
+        }
+
+        .music {
+            columns: auto;
+            display: flex;
+            gap: 8px;
+        }
+
+        .music .video {
+            flex: 0 0 min(622px, 60%);
+        }
+
+        .music .video iframe {
+            width: 100%;
+            height: 350px;
+        }
+
+        .music> :last-child {
+            flex: 1;
+            min-width: 0;
+        }
+
+        @media (max-width: 800px) {
+            .music {
+                flex-direction: column;
+            }
+
+            .music .video {
+                flex: none;
+            }
+
+            .music .video iframe {
+                height: auto;
+                aspect-ratio: 16 / 9;
+            }
+        }
+
         .spinner {
             position: absolute;
             top: 50%;
@@ -360,6 +399,10 @@
                 <img src="images/IMG_5769.jpg" alt="IMG_5769.jpg" width="1600" height="2000" loading="lazy" />
                 <img src="images/IMG_5882.jpg" alt="IMG_5882.jpg" width="2000" height="1600" loading="lazy" />
                 <img src="images/IMG_5953.jpg" alt="IMG_5953.jpg" width="2000" height="1600" loading="lazy" />
+                <img src="images/IMG_6371.jpg" alt="IMG_6371.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/IMG_6404-2.jpg" alt="IMG_6404-2.jpg" width="2000" height="1600" loading="lazy" />
+                <img src="images/IMG_6450.jpg" alt="IMG_6450.jpg" width="2000" height="1600" loading="lazy" />
+                <img src="images/IMG_6533-3.jpg" alt="IMG_6533-3.jpg" width="1600" height="2000" loading="lazy" />
             </div>
         </div>
         <p>Follow my photography Instagram: <a href="https://www.instagram.com/maks.eon/" target="_blank">@maks.eon</a>
@@ -369,17 +412,26 @@
         <summary>
             <h2>Music</h2>
         </summary>
-        <div class="embed">
-            <iframe title="DJ mixes on SoundCloud" width="100%" height="350" scrolling="no" frameborder="no"
-                allow="autoplay" loading="lazy" onload="this.classList.add('loaded')"
-                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/maxcontrol&color=%23000000&auto_play=false&show_comments=false&visual=false"></iframe>
-            <div class="spinner" role="status" aria-label="Loading mixes"></div>
+        <div class="music">
+            <div class="embed video">
+                <iframe title="Live at Bourbon on Division" frameborder="0" loading="lazy"
+                    onload="this.classList.add('loaded')"
+                    allow="encrypted-media; picture-in-picture; web-share" allowfullscreen
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    src="https://www.youtube-nocookie.com/embed/t9Qd2hQrTkY"></iframe>
+                <div class="spinner" role="status" aria-label="Loading video"></div>
+            </div>
+            <div class="embed">
+                <iframe title="DJ mixes on SoundCloud" width="100%" height="350" scrolling="no" frameborder="no"
+                    allow="autoplay" loading="lazy" onload="this.classList.add('loaded')"
+                    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/maxcontrol&color=%23000000&auto_play=false&show_comments=false&visual=false"></iframe>
+                <div class="spinner" role="status" aria-label="Loading mixes"></div>
+            </div>
         </div>
         <p>Follow my DJ Instagram for upcoming shows: <a href="https://www.instagram.com/maxcontrol__"
                 target="_blank">@maxcontrol__</a>
         </p>
-        <p>Also on <a href="https://www.tiktok.com/@maxcontrolmusic" target="_blank">TikTok</a> and <a
-                href="https://www.youtube.com/@maxcontrolmusic" target="_blank">YouTube</a></p>
+        <p>Also on <a href="https://www.tiktok.com/@maxcontrolmusic" target="_blank">TikTok</a></p>
     </details>
     <details>
         <summary>
