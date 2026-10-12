@@ -42,6 +42,11 @@
             max-width: 960px;
             margin: 0 auto;
             padding: 24px;
+            box-sizing: border-box;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
         }
 
         @media (max-width: 600px) {
@@ -260,6 +265,17 @@
                 animation-duration: 3s;
             }
         }
+
+        footer {
+            margin-top: auto;
+            padding-top: 48px;
+            font-size: 0.8em;
+            opacity: 0.6;
+        }
+
+        footer a {
+            color: inherit;
+        }
     </style>
 </head>
 
@@ -450,6 +466,7 @@
             <p><button type="submit">Send</button></p>
         </form>
     </details>
+    <footer><a href="https://github.com/maxwalts/mwalts-site" target="_blank">View source</a></footer>
     <script>
         const shuffle = parent => {
             const items = [...parent.children];
