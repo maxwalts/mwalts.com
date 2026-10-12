@@ -213,12 +213,17 @@
 
         .music .video iframe {
             width: 100%;
-            height: 350px;
+            aspect-ratio: 16 / 9;
         }
 
+        /* SoundCloud stretches to the video's height */
         .music> :last-child {
             flex: 1;
             min-width: 0;
+        }
+
+        .music> :last-child iframe {
+            height: 100%;
         }
 
         @media (max-width: 800px) {
@@ -230,9 +235,8 @@
                 flex: none;
             }
 
-            .music .video iframe {
-                height: auto;
-                aspect-ratio: 16 / 9;
+            .music> :last-child iframe {
+                height: 350px;
             }
         }
 
