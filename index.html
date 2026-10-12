@@ -64,8 +64,33 @@
         img {
             display: block;
             width: 100%;
+            height: auto;
             margin-bottom: 8px;
             cursor: zoom-in;
+        }
+
+        #gallery img:not(.zoomed) {
+            background: rgba(128, 128, 128, 0.15);
+        }
+
+        #gallery img:not(.loaded) {
+            opacity: 0.3;
+        }
+
+        #gallery img.loaded {
+            animation: fade-in 0.6s ease-out;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0.3;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            #gallery img.loaded {
+                animation: none;
+            }
         }
 
         img.zoomed {
@@ -152,11 +177,49 @@
 
         iframe[title="Guestbook"] {
             color-scheme: light dark;
+        }
+
+        .embed iframe {
             visibility: hidden;
         }
 
-        iframe[title="Guestbook"].loaded {
+        .embed iframe.loaded {
             visibility: visible;
+        }
+
+        .embed {
+            columns: auto;
+            position: relative;
+        }
+
+        .spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 28px;
+            height: 28px;
+            margin: -17px 0 0 -17px;
+            border: 3px solid currentColor;
+            border-right-color: transparent;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: spin 0.8s linear infinite;
+        }
+
+        iframe.loaded+.spinner {
+            display: none;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .spinner {
+                animation-duration: 3s;
+            }
         }
     </style>
 </head>
@@ -270,33 +333,33 @@
         </summary>
         <div class="photo-scroll">
             <div id="gallery">
-                <img src="images/DSCF2696.jpg" alt="DSCF2696.jpg" loading="lazy" />
-                <img src="images/IMG_5262.jpg" alt="IMG_5262.jpg" loading="lazy" />
-                <img src="images/IMG_5264.jpg" alt="IMG_5264.jpg" loading="lazy" />
-                <img src="images/IMG_5270.jpg" alt="IMG_5270.jpg" loading="lazy" />
-                <img src="images/IMG_4844.jpg" alt="IMG_4844.jpg" loading="lazy" />
-                <img src="images/IMG_4863-2.jpg" alt="IMG_4863-2.jpg" loading="lazy" />
-                <img src="images/IMG_4863.jpg" alt="IMG_4863.jpg" loading="lazy" />
-                <img src="images/IMG_4873-2.jpg" alt="IMG_4873-2.jpg" loading="lazy" />
-                <img src="images/IMG_4873.jpg" alt="IMG_4873.jpg" loading="lazy" />
-                <img src="images/IMG_4880-2.jpg" alt="IMG_4880-2.jpg" loading="lazy" />
-                <img src="images/IMG_4880.jpg" alt="IMG_4880.jpg" loading="lazy" />
-                <img src="images/IMG_4960-2.jpg" alt="IMG_4960-2.jpg" loading="lazy" />
-                <img src="images/IMG_4960.jpg" alt="IMG_4960.jpg" loading="lazy" />
-                <img src="images/DSCF5846.jpg" alt="DSCF5846.jpg" loading="lazy" />
-                <img src="images/IMG_4978.jpg" alt="IMG_4978.jpg" loading="lazy" />
-                <img src="images/IMG_5006.jpg" alt="IMG_5006.jpg" loading="lazy" />
-                <img src="images/IMG_5065.jpg" alt="IMG_5065.jpg" loading="lazy" />
-                <img src="images/IMG_5334.jpg" alt="IMG_5334.jpg" loading="lazy" />
-                <img src="images/IMG_5373.jpg" alt="IMG_5373.jpg" loading="lazy" />
-                <img src="images/IMG_5384-2.jpg" alt="IMG_5384-2.jpg" loading="lazy" />
-                <img src="images/IMG_5443.jpg" alt="IMG_5443.jpg" loading="lazy" />
-                <img src="images/IMG_5591.jpg" alt="IMG_5591.jpg" loading="lazy" />
-                <img src="images/IMG_5619.jpg" alt="IMG_5619.jpg" loading="lazy" />
-                <img src="images/IMG_5673-Enhanced-NR.jpg" alt="IMG_5673-Enhanced-NR.jpg" loading="lazy" />
-                <img src="images/IMG_5769.jpg" alt="IMG_5769.jpg" loading="lazy" />
-                <img src="images/IMG_5882.jpg" alt="IMG_5882.jpg" loading="lazy" />
-                <img src="images/IMG_5953.jpg" alt="IMG_5953.jpg" loading="lazy" />
+                <img src="images/DSCF2696.jpg" alt="DSCF2696.jpg" width="1333" height="2000" loading="lazy" />
+                <img src="images/IMG_5262.jpg" alt="IMG_5262.jpg" width="1333" height="2000" loading="lazy" />
+                <img src="images/IMG_5264.jpg" alt="IMG_5264.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/IMG_5270.jpg" alt="IMG_5270.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/IMG_4844.jpg" alt="IMG_4844.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/IMG_4863-2.jpg" alt="IMG_4863-2.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/IMG_4863.jpg" alt="IMG_4863.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/IMG_4873-2.jpg" alt="IMG_4873-2.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/IMG_4873.jpg" alt="IMG_4873.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/IMG_4880-2.jpg" alt="IMG_4880-2.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/IMG_4880.jpg" alt="IMG_4880.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/IMG_4960-2.jpg" alt="IMG_4960-2.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/IMG_4960.jpg" alt="IMG_4960.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/DSCF5846.jpg" alt="DSCF5846.jpg" width="1333" height="2000" loading="lazy" />
+                <img src="images/IMG_4978.jpg" alt="IMG_4978.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/IMG_5006.jpg" alt="IMG_5006.jpg" width="1333" height="2000" loading="lazy" />
+                <img src="images/IMG_5065.jpg" alt="IMG_5065.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/IMG_5334.jpg" alt="IMG_5334.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/IMG_5373.jpg" alt="IMG_5373.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/IMG_5384-2.jpg" alt="IMG_5384-2.jpg" width="2000" height="1333" loading="lazy" />
+                <img src="images/IMG_5443.jpg" alt="IMG_5443.jpg" width="2000" height="1600" loading="lazy" />
+                <img src="images/IMG_5591.jpg" alt="IMG_5591.jpg" width="1600" height="2000" loading="lazy" />
+                <img src="images/IMG_5619.jpg" alt="IMG_5619.jpg" width="2000" height="1600" loading="lazy" />
+                <img src="images/IMG_5673-Enhanced-NR.jpg" alt="IMG_5673-Enhanced-NR.jpg" width="2000" height="1600" loading="lazy" />
+                <img src="images/IMG_5769.jpg" alt="IMG_5769.jpg" width="1600" height="2000" loading="lazy" />
+                <img src="images/IMG_5882.jpg" alt="IMG_5882.jpg" width="2000" height="1600" loading="lazy" />
+                <img src="images/IMG_5953.jpg" alt="IMG_5953.jpg" width="2000" height="1600" loading="lazy" />
             </div>
         </div>
         <p>Follow my photography Instagram: <a href="https://www.instagram.com/maks.eon/" target="_blank">@maks.eon</a>
@@ -306,9 +369,12 @@
         <summary>
             <h2>Music</h2>
         </summary>
-        <iframe title="DJ mixes on SoundCloud" width="100%" height="350" scrolling="no" frameborder="no"
-            allow="autoplay" loading="lazy"
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/maxcontrol&color=%23000000&auto_play=false&show_comments=false&visual=false"></iframe>
+        <div class="embed">
+            <iframe title="DJ mixes on SoundCloud" width="100%" height="350" scrolling="no" frameborder="no"
+                allow="autoplay" loading="lazy" onload="this.classList.add('loaded')"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/maxcontrol&color=%23000000&auto_play=false&show_comments=false&visual=false"></iframe>
+            <div class="spinner" role="status" aria-label="Loading mixes"></div>
+        </div>
         <p>Follow my DJ Instagram for upcoming shows: <a href="https://www.instagram.com/maxcontrol__"
                 target="_blank">@maxcontrol__</a>
         </p>
@@ -319,8 +385,11 @@
         <summary>
             <h2>Guestbook</h2>
         </summary>
-        <iframe title="Guestbook" width="100%" height="450" frameborder="0" loading="lazy"
-            onload="this.classList.add('loaded')" src="https://guestbooks.meadow.cafe/guestbook/6598"></iframe>
+        <div class="embed">
+            <iframe title="Guestbook" width="100%" height="450" frameborder="0" loading="lazy"
+                onload="this.classList.add('loaded')" src="https://guestbooks.meadow.cafe/guestbook/6598"></iframe>
+            <div class="spinner" role="status" aria-label="Loading guestbook"></div>
+        </div>
     </details>
     <details>
         <summary>
@@ -333,17 +402,46 @@
         </form>
     </details>
     <script>
-        const gallery = document.getElementById("gallery");
-        const imgs = [...gallery.children];
-        for (let i = imgs.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [imgs[i], imgs[j]] = [imgs[j], imgs[i]];
-        }
-        gallery.append(...imgs);
+        const shuffle = parent => {
+            const items = [...parent.children];
+            for (let i = items.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [items[i], items[j]] = [items[j], items[i]];
+            }
+            parent.append(...items);
+        };
+        shuffle(document.getElementById("gallery"));
+        shuffle(document.querySelector(".lists"));
+
+        const track = (path, title) => window.goatcounter?.count?.({ path, title, event: true });
+
+        document.querySelectorAll("details").forEach(d => {
+            d.addEventListener("toggle", () => {
+                if (d.open) track("open-" + d.querySelector("h2").textContent.toLowerCase().replace(/\s+/g, "-"), "Opened section");
+            });
+        });
+
+        document.querySelectorAll('a[target="_blank"]').forEach(a => {
+            a.addEventListener("click", () => track("out-" + a.hostname + a.pathname, "Outbound link"));
+        });
 
         document.querySelectorAll("#gallery img").forEach(img => {
-            img.onclick = () => img.classList.toggle("zoomed");
+            if (img.complete) img.classList.add("loaded");
+            else img.onload = img.onerror = () => img.classList.add("loaded");
+            img.onclick = () => {
+                img.classList.toggle("zoomed");
+                if (img.classList.contains("zoomed")) track("zoom-" + img.alt, "Photo zoom");
+            };
         });
+
+        const scroller = document.querySelector(".photo-scroll");
+        let sawEnd = false;
+        scroller.addEventListener("scroll", () => {
+            if (!sawEnd && scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 20) {
+                sawEnd = true;
+                track("gallery-end", "Scrolled to end of gallery");
+            }
+        }, { passive: true });
 
         const note = document.getElementById("note");
         note.onsubmit = async e => {
@@ -353,6 +451,7 @@
                 body: new FormData(note),
                 headers: { Accept: "application/json" }
             }).catch(() => null);
+            track(res && res.ok ? "note-sent" : "note-failed", "Note");
             note.innerHTML = res && res.ok
                 ? "<p>Thanks, got it</p>"
                 : "<p>Something went wrong. Try again later</p>";
