@@ -32,6 +32,16 @@
         form button {
             font: inherit;
         }
+
+        #mute {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -45,7 +55,31 @@
         <p><input type="tel" name="phone" placeholder="Phone (optional)" autocomplete="tel" /></p>
         <p><button type="submit">Count me in</button></p>
     </form>
+    <button id="mute" type="button" aria-label="Mute music">🔊</button>
+    <audio id="music" loop preload="auto">
+        <source src="/day1s.webm" type="audio/webm" />
+        <source src="/day1s.m4a" type="audio/mp4" />
+    </audio>
     <script>
+        // Browsers block autoplay with sound until the visitor interacts, so retry on the first tap or keypress
+        const music = document.getElementById("music");
+        music.play().catch(() => {
+            const start = () => {
+                removeEventListener("pointerdown", start);
+                removeEventListener("keydown", start);
+                music.play().catch(() => {});
+            };
+            addEventListener("pointerdown", start);
+            addEventListener("keydown", start);
+        });
+
+        const mute = document.getElementById("mute");
+        mute.onclick = () => {
+            music.muted = !music.muted;
+            mute.textContent = music.muted ? "🔇" : "🔊";
+            mute.ariaLabel = music.muted ? "Unmute music" : "Mute music";
+        };
+
         const SUPABASE_URL = "https://mwuaxxkcfdxouyqigbsi.supabase.co";
         const SUPABASE_KEY = "sb_publishable_PFlCtEFPncOVpNOYfAC3pw_dmHtHPjf";
         const EVENT = "party-tbd";
