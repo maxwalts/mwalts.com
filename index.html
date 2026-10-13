@@ -504,6 +504,12 @@
 
         const track = (path, title) => window.goatcounter?.count?.({ path, title, event: true });
 
+        // Count new vs returning visitors
+        let seen = null;
+        try { seen = localStorage.getItem("seen"); localStorage.setItem("seen", "1"); } catch {}
+        window.addEventListener("load", () =>
+            track(seen ? "visit-return" : "visit-new", seen ? "Returning visitor" : "New visitor"));
+
         document.querySelectorAll("details").forEach(d => {
             d.addEventListener("toggle", () => {
                 if (d.open) track("open-" + d.querySelector("h2").textContent.toLowerCase().replace(/\s+/g, "-"), "Opened section");
