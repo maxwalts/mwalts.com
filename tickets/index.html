@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="color-scheme" content="light dark" />
     <meta name="robots" content="noindex" />
-    <title>Tickets · Max Walts</title>
+    <title>Tickets · Max Control</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
     <style>
         body {
@@ -28,19 +28,23 @@
             box-sizing: border-box;
             font: inherit;
         }
+
+        form button {
+            font: inherit;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Party</h1>
-    <p>Date and place TBD. Get on the list and I'll let you know when it's happening.</p>
+    <p><a href="https://www.instagram.com/maxcontrol__/" target="_blank">Max Control</a> presents</p>
+    <h1>This One's for My Day Ones</h1>
+    <p id="intro">Date and venue TBA. Your ticket and the details will come by email</p>
     <form id="ticket-form">
         <p><input type="text" name="name" placeholder="Name" autocomplete="name" required /></p>
         <p><input type="email" name="email" placeholder="Email" autocomplete="email" required /></p>
-        <p><input type="tel" name="phone" placeholder="Phone" autocomplete="tel" required /></p>
-        <p><button type="submit">Get a ticket</button></p>
+        <p><input type="tel" name="phone" placeholder="Phone (optional)" autocomplete="tel" /></p>
+        <p><button type="submit">Count me in</button></p>
     </form>
-    <p><a href="/">mwalts.com</a></p>
     <script>
         const SUPABASE_URL = "https://mwuaxxkcfdxouyqigbsi.supabase.co";
         const SUPABASE_KEY = "sb_publishable_PFlCtEFPncOVpNOYfAC3pw_dmHtHPjf";
@@ -59,7 +63,9 @@
                 },
                 body: JSON.stringify({ event: EVENT, ...Object.fromEntries(new FormData(form)) })
             }).catch(() => null);
-            form.innerHTML = res && (res.ok || res.status === 409)
+            const ok = res && (res.ok || res.status === 409);
+            if (ok) document.getElementById("intro").remove();
+            form.innerHTML = ok
                 ? "<p>You're on the list. See you there</p>"
                 : "<p>Something went wrong. Try again later</p>";
         };

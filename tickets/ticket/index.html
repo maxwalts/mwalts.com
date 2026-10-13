@@ -18,12 +18,20 @@
         }
 
         #qr {
-            display: inline-block;
+            width: min(320px, 100%);
+            margin: 0 auto;
             padding: 16px;
+            box-sizing: border-box;
             background: white;
         }
+
+        #qr svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 </head>
 
 <body>
@@ -33,11 +41,11 @@
     <script>
         const code = new URLSearchParams(location.search).get("t");
         if (/^[0-9a-f-]{36}$/i.test(code || "")) {
-            new QRCode(document.getElementById("qr"), {
-                text: "https://mwalts.com/tickets/door/?t=" + code,
-                width: 256,
-                height: 256
-            });
+            // SVG so the code stays sharp at any zoom
+            const qr = qrcode(0, "M");
+            qr.addData("https://mwalts.com/tickets/door/?t=" + code);
+            qr.make();
+            document.getElementById("qr").innerHTML = qr.createSvgTag({ margin: 0, scalable: true });
         } else {
             document.getElementById("qr").remove();
             document.getElementById("msg").textContent = "This ticket link looks broken. Check the link in your email";
