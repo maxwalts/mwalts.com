@@ -29,10 +29,6 @@
             font: inherit;
         }
 
-        form button {
-            font: inherit;
-        }
-
         #mute {
             position: fixed;
             top: 16px;
@@ -55,30 +51,36 @@
         <p><input type="tel" name="phone" placeholder="Phone (optional)" autocomplete="tel" /></p>
         <p><button type="submit">Count me in</button></p>
     </form>
-    <button id="mute" type="button" aria-label="Mute music">🔊</button>
+    <button id="mute" type="button" aria-label="Play music">🔇</button>
     <audio id="music" loop preload="auto">
         <source src="/day1s.webm" type="audio/webm" />
         <source src="/day1s.m4a" type="audio/mp4" />
     </audio>
     <script>
-        // Browsers block autoplay with sound until the visitor interacts, so retry on the first tap or keypress
         const music = document.getElementById("music");
+        const mute = document.getElementById("mute");
+        const updateIcon = () => {
+            const silent = music.paused || music.muted;
+            mute.textContent = silent ? "🔇" : "🔊";
+            mute.ariaLabel = silent ? "Play music" : "Mute music";
+        };
+        music.onplay = music.onpause = music.onvolumechange = updateIcon;
+
+        mute.onclick = () => {
+            if (music.paused) music.play().catch(() => {});
+            else music.muted = !music.muted;
+        };
+
+        // Browsers block autoplay with sound until the visitor interacts. On phones only
+        // the end of a tap counts (click, or touchend for taps on blank space in iOS Safari)
         music.play().catch(() => {
-            const start = () => {
-                removeEventListener("pointerdown", start);
-                removeEventListener("keydown", start);
+            const start = e => {
+                if (mute.contains(e.target)) return; // the speaker button handles its own taps
+                ["click", "touchend", "keydown"].forEach(t => removeEventListener(t, start));
                 music.play().catch(() => {});
             };
-            addEventListener("pointerdown", start);
-            addEventListener("keydown", start);
+            ["click", "touchend", "keydown"].forEach(t => addEventListener(t, start));
         });
-
-        const mute = document.getElementById("mute");
-        mute.onclick = () => {
-            music.muted = !music.muted;
-            mute.textContent = music.muted ? "🔇" : "🔊";
-            mute.ariaLabel = music.muted ? "Unmute music" : "Mute music";
-        };
 
         const SUPABASE_URL = "https://mwuaxxkcfdxouyqigbsi.supabase.co";
         const SUPABASE_KEY = "sb_publishable_PFlCtEFPncOVpNOYfAC3pw_dmHtHPjf";
