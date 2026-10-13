@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="robots" content="noindex" />
+    <title>Door · Max Walts</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 24px;
+            text-align: center;
+        }
+
+        #result {
+            font-size: 2em;
+            padding: 24px;
+            color: white;
+        }
+
+        .admitted { background: green; }
+        .already { background: darkorange; }
+        .invalid { background: firebrick; }
+
+        form input {
+            font: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="result" hidden></div>
+    <form id="pin-form" hidden>
+        <p>Door check-in. If this is your ticket, just show the QR code at the door</p>
+        <p><input type="password" name="pin" placeholder="Door PIN" required /> <button type="submit">Check in</button></p>
+    </form>
+    <p id="msg"></p>
+    <script>
+        const SUPABASE_URL = "https://mwuaxxkcfdxouyqigbsi.supabase.co";
+        const SUPABASE_KEY = "sb_publishable_PFlCtEFPncOVpNOYfAC3pw_dmHtHPjf";
+
+        const code = new URLSearchParams(location.search).get("t");
+        const result = document.getElementById("result");
+        const pinForm = document.getElementById("pin-form");
+        const msg = document.getElementById("msg");
+
+        const getPin = () => { try { return localStorage.getItem("doorPin"); } catch { return null; } };
+        const setPin = pin => { try { pin ? localStorage.setItem("doorPin", pin) : localStorage.removeItem("doorPin"); } catch {} };
+
+        const show = (cls, text) => {
+            result.className = cls;
+            result.textContent = text;
+            result.hidden = false;
+        };
+
+        const checkIn = async pin => {
+            pinForm.hidden = true;
+            msg.textContent = "Checking…";
+            const res = await fetch(SUPABASE_URL + "/rest/v1/rpc/check_in", {
+                method: "POST",
+                headers: { apikey: SUPABASE_KEY, "Content-Type": "application/json" },
+                body: JSON.stringify({ ticket: code, pin })
+            }).catch(() => null);
+            const data = res && res.ok ? await res.json() : null;
+            msg.textContent = "";
+            if (!data) return msg.textContent = "Couldn't reach the server. Try again";
+            if (data.status === "wrong-pin") {
+                setPin(null);
+                pinForm.hidden = false;
+                return msg.textContent = "Wrong PIN";
+            }
+            setPin(pin);
+            if (data.status === "admitted") show("admitted", "✓ " + data.name);
+            else if (data.status === "already") show("already", "Already admitted at " + new Date(data.admitted_at).toLocaleTimeString() + ": " + data.name);
+            else show("invalid", "Not a valid ticket");
+        };
+
+        pinForm.onsubmit = e => {
+            e.preventDefault();
+            checkIn(pinForm.pin.value);
+        };
+
+        if (!/^[0-9a-f-]{36}$/i.test(code || "")) msg.textContent = "Scan a ticket QR code with your phone camera";
+        else if (getPin()) checkIn(getPin());
+        else pinForm.hidden = false;
+    </script>
+</body>
+
+</html>

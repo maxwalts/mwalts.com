@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="robots" content="noindex" />
+    <title>Tickets · Max Walts</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 16px;
+            }
+        }
+
+        form input {
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+            font: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Party</h1>
+    <p>Date and place TBD. Get on the list and I'll let you know when it's happening.</p>
+    <form id="ticket-form">
+        <p><input type="text" name="name" placeholder="Name" autocomplete="name" required /></p>
+        <p><input type="email" name="email" placeholder="Email" autocomplete="email" required /></p>
+        <p><input type="tel" name="phone" placeholder="Phone" autocomplete="tel" required /></p>
+        <p><button type="submit">Get a ticket</button></p>
+    </form>
+    <p><a href="/">mwalts.com</a></p>
+    <script>
+        const SUPABASE_URL = "https://mwuaxxkcfdxouyqigbsi.supabase.co";
+        const SUPABASE_KEY = "sb_publishable_PFlCtEFPncOVpNOYfAC3pw_dmHtHPjf";
+        const EVENT = "party-tbd";
+
+        const form = document.getElementById("ticket-form");
+        form.onsubmit = async e => {
+            e.preventDefault();
+            form.querySelector("button").disabled = true;
+            const res = await fetch(SUPABASE_URL + "/rest/v1/tickets", {
+                method: "POST",
+                headers: {
+                    apikey: SUPABASE_KEY,
+                    "Content-Type": "application/json",
+                    Prefer: "return=minimal"
+                },
+                body: JSON.stringify({ event: EVENT, ...Object.fromEntries(new FormData(form)) })
+            }).catch(() => null);
+            form.innerHTML = res && (res.ok || res.status === 409)
+                ? "<p>You're on the list. See you there</p>"
+                : "<p>Something went wrong. Try again later</p>";
+        };
+    </script>
+    <script data-goatcounter="https://maxwalts.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+
+</html>

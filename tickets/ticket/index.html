@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="robots" content="noindex" />
+    <title>Your ticket · Max Walts</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 24px;
+            text-align: center;
+        }
+
+        #qr {
+            display: inline-block;
+            padding: 16px;
+            background: white;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body>
+    <h1>Your ticket</h1>
+    <div id="qr"></div>
+    <p id="msg">Show this at the door</p>
+    <script>
+        const code = new URLSearchParams(location.search).get("t");
+        if (/^[0-9a-f-]{36}$/i.test(code || "")) {
+            new QRCode(document.getElementById("qr"), {
+                text: "https://mwalts.com/tickets/door/?t=" + code,
+                width: 256,
+                height: 256
+            });
+        } else {
+            document.getElementById("qr").remove();
+            document.getElementById("msg").textContent = "This ticket link looks broken. Check the link in your email";
+        }
+    </script>
+</body>
+
+</html>
