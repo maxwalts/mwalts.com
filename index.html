@@ -204,8 +204,12 @@
             }
         }
 
+        /* The guestbook pads its page 4px so focus rings aren't cut off at the frame edge;
+           widen the frame by the same so its fields still line up with the heading */
         iframe[title="Guestbook"] {
             color-scheme: light dark;
+            width: calc(100% + 8px);
+            margin: 0 -4px;
         }
 
         .embed iframe {
@@ -525,8 +529,9 @@
             if (!section) return;
             section.open = true;
             target.scrollIntoView();
-            // Contact link (#note): put the cursor straight in the message box
-            if (target.id === "note") document.querySelector("#note-form textarea").focus({ preventScroll: true });
+            // Contact link (#note): put the cursor straight in the message box. A plain focus() lets
+            // phones scroll it above the keyboard the same way a tap on the box would
+            if (target.id === "note") document.querySelector("#note-form textarea").focus();
         };
         openFromHash();
         addEventListener("hashchange", openFromHash);
