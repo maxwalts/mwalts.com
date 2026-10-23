@@ -180,6 +180,30 @@
             font: inherit;
         }
 
+        /* Match the guestbook's submit button */
+        form button {
+            font: inherit;
+        }
+
+        .guestbook,
+        .guestbook>div {
+            columns: auto;
+        }
+
+        /* The form's 1em top margin (on both sides) sets the gap under each heading */
+        .guestbook h3 {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 720px) {
+            .guestbook {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+                align-items: start;
+            }
+        }
+
         iframe[title="Guestbook"] {
             color-scheme: light dark;
         }
@@ -458,23 +482,30 @@
         <summary>
             <h2>Guestbook</h2>
         </summary>
-        <div class="embed">
-            <iframe title="Guestbook" width="100%" height="450" frameborder="0" loading="lazy"
-                onload="this.classList.add('loaded')" src="https://guestbooks.meadow.cafe/guestbook/6598"></iframe>
-            <div class="spinner" role="status" aria-label="Loading guestbook"></div>
+        <div class="guestbook">
+            <div>
+                <h3>Sign the guestbook</h3>
+                <div class="embed">
+                    <iframe title="Guestbook" width="100%" height="450" frameborder="0" loading="lazy"
+                        onload="this.classList.add('loaded')"
+                        src="https://guestbooks.meadow.cafe/guestbook/6598"></iframe>
+                    <div class="spinner" role="status" aria-label="Loading guestbook"></div>
+                </div>
+            </div>
+            <div>
+                <h3 id="note">Or send a private note</h3>
+                <form id="note-form" action="https://formspree.io/f/mjykplog" method="POST">
+                    <p><textarea name="message" rows="5" placeholder="What's on your mind?" required></textarea></p>
+                    <p><input type="text" name="name" placeholder="Name or contact info (optional)" /></p>
+                    <p><button type="submit">Send</button></p>
+                </form>
+            </div>
         </div>
     </details>
-    <details id="note">
-        <summary>
-            <h2>Send Me a Note</h2>
-        </summary>
-        <form id="note-form" action="https://formspree.io/f/mjykplog" method="POST">
-            <p><textarea name="message" rows="5" placeholder="What's on your mind?" required></textarea></p>
-            <p><input type="text" name="name" placeholder="Name or contact info (optional)" /></p>
-            <p><button type="submit">Send</button></p>
-        </form>
-    </details>
-    <footer><a href="https://github.com/maxwalts/mwalts-site" target="_blank">View source</a></footer>
+    <footer>
+        <a href="#note">Contact</a> ·
+        <a href="https://github.com/maxwalts/mwalts-site" target="_blank">View source</a>
+    </footer>
     <script>
         const shuffle = parent => {
             const items = [...parent.children];
@@ -487,12 +518,15 @@
         shuffle(document.getElementById("gallery"));
         shuffle(document.querySelector(".lists"));
 
-        // Open the section named in the URL, e.g. maxwalts.com/#photos
+        // Open the section named in the URL, e.g. maxwalts.com/#photos or #guestbook
         const openFromHash = () => {
-            const section = document.getElementById(location.hash.slice(1));
-            if (section?.tagName !== "DETAILS") return;
+            const target = document.getElementById(location.hash.slice(1));
+            const section = target?.closest("details");
+            if (!section) return;
             section.open = true;
-            section.scrollIntoView();
+            target.scrollIntoView();
+            // Contact link (#note): put the cursor straight in the message box
+            if (target.id === "note") document.querySelector("#note-form textarea").focus({ preventScroll: true });
         };
         openFromHash();
         addEventListener("hashchange", openFromHash);
@@ -502,11 +536,16 @@
         firstPhoto.fetchPriority = "high";
         firstPhoto.loading = "eager";
 
-        const track = (path, title) => window.goatcounter?.count?.({ path, title, event: true });
+        // GoatCounter loads async, so hold early events (e.g. a section opened from the URL) until page load
+        const track = (path, title) => {
+            const send = () => window.goatcounter?.count?.({ path, title, event: true });
+            if (document.readyState === "complete") send();
+            else addEventListener("load", send, { once: true });
+        };
 
         // Count new vs returning visitors
         let seen = null;
-        try { seen = localStorage.getItem("seen"); localStorage.setItem("seen", "1"); } catch {}
+        try { seen = localStorage.getItem("seen"); localStorage.setItem("seen", "1"); } catch { }
         window.addEventListener("load", () =>
             track(seen ? "visit-return" : "visit-new", seen ? "Returning visitor" : "New visitor"));
 
@@ -518,6 +557,15 @@
 
         document.querySelectorAll('a[target="_blank"]').forEach(a => {
             a.addEventListener("click", () => track("out-" + a.hostname + a.pathname, "Outbound link"));
+        });
+
+        // Handle Contact in the click itself: a repeat click doesn't change the hash (so no hashchange),
+        // and phones only raise the keyboard for focus() called directly from a tap
+        document.querySelector('footer a[href="#note"]').addEventListener("click", e => {
+            e.preventDefault();
+            if (location.hash !== "#note") history.pushState(null, "", "#note");
+            openFromHash();
+            track("contact-click", "Contact link");
         });
 
         document.querySelectorAll("#gallery img").forEach(img => {
