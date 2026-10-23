@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    {% seo %}
+    {% feed_meta %}
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 24px;
+            box-sizing: border-box;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 16px;
+            }
+        }
+
+        nav a {
+            color: inherit;
+        }
+
+        /* Keep lines to a comfortable reading length */
+        article {
+            max-width: 65ch;
+            line-height: 1.6;
+        }
+
+        article h1 {
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        article>time {
+            display: block;
+            margin-bottom: 32px;
+            opacity: 0.6;
+        }
+
+        article img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            margin-top: auto;
+            padding-top: 48px;
+            font-size: 0.8em;
+            opacity: 0.6;
+        }
+
+        footer a {
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <nav><a href="/#writing">← Max Walts</a></nav>
+    <article>
+        <h1>{{ page.title }}</h1>
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+        {{ content }}
+    </article>
+    <footer>
+        <a href="/#note">Contact</a> ·
+        <a href="https://github.com/maxwalts/mwalts.com/blob/main/{{ page.path }}" target="_blank">View source</a>
+    </footer>
+    <script data-goatcounter="https://maxwalts.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+
+</html>

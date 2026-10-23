@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="en-US">
 
@@ -10,6 +12,7 @@
     <link rel="canonical" href="https://mwalts.com/" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    {% feed_meta %}
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="Max Walts" />
     <meta property="og:description" content="Photos, music, and lists from Max" />
@@ -129,6 +132,20 @@
             .lists ul {
                 padding-left: 20px;
             }
+        }
+
+        .writing {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .writing time {
+            display: inline-block;
+            min-width: 7em;
+            opacity: 0.6;
+            font-variant-numeric: tabular-nums;
         }
 
         section h3,
@@ -482,6 +499,21 @@
         </p>
         <p>Also on <a href="https://www.tiktok.com/@maxcontrolmusic" target="_blank">TikTok</a></p>
     </details>
+    {% if site.posts.size > 0 %}
+    <details id="writing">
+        <summary>
+            <h2>Writing</h2>
+        </summary>
+        <ul class="writing">
+            {% for post in site.posts %}
+            <li>
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </details>
+    {% endif %}
     <details id="guestbook">
         <summary>
             <h2>Guestbook</h2>

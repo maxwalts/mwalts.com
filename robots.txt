@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mwalts.com/sitemap.xml

@@ -1,0 +1,31 @@
+# GitHub Pages builds the site with Jekyll. Files without front matter (most of the site) are copied as-is
+title: Max Walts
+description: Lists, photos, music, and writing from Max
+url: https://mwalts.com
+baseurl: ""
+lang: en-US
+author:
+  name: Max Walts
+  url: https://mwalts.com/
+
+# Posts live at /blog/<slug>/, where the slug is the post's filename minus the date
+permalink: /blog/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      # Link preview image for posts that don't set their own
+      image: /og-image.jpg
+  # Ticket pages are noindex, so keep them out of the sitemap too
+  - scope:
+      path: tickets
+    values:
+      sitemap: false
