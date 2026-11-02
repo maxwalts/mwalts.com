@@ -34,12 +34,14 @@
 </head>
 
 <body>
-    <div id="result" hidden></div>
-    <form id="pin-form" hidden>
-        <p>Door check-in. If this is your ticket, just show the QR code at the door</p>
-        <p><input type="password" name="pin" placeholder="Door PIN" required /> <button type="submit">Check in</button></p>
-    </form>
-    <p id="msg"></p>
+    <main>
+        <div id="result" hidden></div>
+        <form id="pin-form" hidden>
+            <p>Door check-in. If this is your ticket, just show the QR code at the door</p>
+            <p><input type="password" name="pin" placeholder="Door PIN" required /> <button type="submit">Check in</button></p>
+        </form>
+        <p id="msg"></p>
+    </main>
     <script>
         const SUPABASE_URL = "https://mwuaxxkcfdxouyqigbsi.supabase.co";
         const SUPABASE_KEY = "sb_publishable_PFlCtEFPncOVpNOYfAC3pw_dmHtHPjf";

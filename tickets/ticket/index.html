@@ -35,9 +35,11 @@
 </head>
 
 <body>
-    <h1>Your ticket</h1>
-    <div id="qr"></div>
-    <p id="msg">Show this at the door</p>
+    <main>
+        <h1>Your ticket</h1>
+        <div id="qr"></div>
+        <p id="msg">Show this at the door</p>
+    </main>
     <script>
         const code = new URLSearchParams(location.search).get("t");
         if (/^[0-9a-f-]{36}$/i.test(code || "")) {
