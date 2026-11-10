@@ -22,7 +22,7 @@ American Psycho is one of my favorite movies, and Patrick Bateman is a classic H
 
 ## Making the business cards
 
-"Silian Rail" isn't a real font. The lettering in the movie is Garamond Classico SC Regular, so I downloaded that and designed the cards in Canva. I put my phone number, Instagram, and website on mine.
+"Silian Rail" isn't a real font. The lettering in the movie is Garamond Classico SC Regular, so I downloaded that and designed the cards in Canva. I put my phone number on mine.
 
 ![My Pierce & Pierce business card design in the style of the movie, with a placeholder phone number](/images/blog/american-psycho-business-card.jpg){: width="1000" height="571"}
 
