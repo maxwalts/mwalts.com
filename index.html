@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
     <title>Max Walts</title>
     <meta name="description" content="Lists, photos, and music from Max" />
@@ -40,6 +40,11 @@
         }
     </script>
     <style>
+        html {
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
         body {
             font-family: sans-serif;
             max-width: 960px;
@@ -139,10 +144,30 @@
             padding: 0;
             margin: 0;
             line-height: 1.6;
+            container-type: inline-size;
         }
 
         .writing li {
             display: flex;
+        }
+
+        /* Stack the date above the title when the list itself is narrow
+           (phones in portrait), not based on the screen width, so phones
+           in landscape keep the side-by-side layout. */
+        @container (max-width: 32em) {
+            .writing li {
+                display: block;
+            }
+
+            .writing li + li {
+                margin-top: 0.75em;
+            }
+
+            .writing time {
+                display: block;
+                font-size: 0.875em;
+                line-height: 1.4;
+            }
         }
 
         .writing time {
