@@ -10,7 +10,7 @@ American Psycho is one of my favorite movies, and Patrick Bateman is a classic H
 
 ## What you need
 
-- **The basics.** A white tank top, gray dress pants, and black dress shoes. I wore a tank instead of a dress shirt, because I like a Halloween costume to be a little sexy.
+- **The basics.** A white tank top, gray dress pants, and black dress shoes. I wore a tank instead of a dress shirt.
 - **A retro patterned red tie.** I found [this one](https://www.amazon.com/dp/B00I1AEDJU).
 - **A clear plastic raincoat.** [This one](https://www.amazon.com/dp/B000HHLVKY) is perfect. I got a bunch of comments on how it looks exactly like the one from the movie.
 - **Suspenders.** Y-back is the style of the era, and Bateman wears blue suspenders with his red tie. I got [these](https://www.amazon.com/dp/B07SGHZXK4).
