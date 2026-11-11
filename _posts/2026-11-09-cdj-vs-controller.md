@@ -49,7 +49,6 @@ Search and Menu are along the top, and the browse dial and Tag button are to the
 - **Find tracks in a compatible key.** Tap Info in the top right of the touchscreen to see a track's key, then tap the key to see other tracks in the same or a related key, for in-key mixing.
 - **Preview without loading.** When browsing tracks, hold your finger on a track's waveform to listen to it without loading it onto a deck.
 - **Save tracks for later.** Click the Tag Track button, above the dial on the right, to add a track to the Tag List and "half pull" it when you know you'll want to play it soon.
-- **Check what you've played.** The History playlist lists every track from your set.
 
 ### USB
 
