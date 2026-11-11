@@ -1,5 +1,6 @@
 ---
 title: The non-obvious differences between the FLX4 and CDJs
+title_suffix: Max Control
 description: "Moving from a DDJ-FLX4 to an XDJ-RX3 or CDJs? Here's what works differently, the features you won't find by tinkering, and a checklist for your first gig."
 image: /images/blog/cdj-booth-spybar.jpg
 ---

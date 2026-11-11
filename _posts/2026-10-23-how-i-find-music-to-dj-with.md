@@ -1,5 +1,6 @@
 ---
 title: How I find music to DJ with using Soulseek
+title_suffix: Max Control
 description: "Where I get tracks for DJ sets, plus a step-by-step guide to Soulseek: setting up Nicotine+, searching like a DJ, and spotting fake 320s and FLACs."
 image: /images/blog/spek-320-mp3.jpg
 ---
