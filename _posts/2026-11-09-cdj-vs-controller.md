@@ -33,6 +33,8 @@ Each jog wheel has a small screen in the middle. It shows things like whether vi
 
 ![Close-up of the XDJ-RX3 with the IN button and the Quantize button outlined in red](/images/blog/xdj-rx3-loop-quantize.jpg){: width="600" height="400"}
 
+Notice the dot next to "IN" and the line next to "4BEAT." This works the same way across the deck: a dot means the action happens when you tap the button, and a line means it happens when you hold it.
+
 ### The touchscreen
 
 The middle screen is a touchscreen, and it's where you browse your music. Search and Menu are along the top, and the browse dial and Tag button are to the right:
