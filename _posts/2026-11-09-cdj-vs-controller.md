@@ -52,7 +52,7 @@ Search and Menu are along the top, and the browse dial and Tag button are to the
 
 ### USB
 
-The XDJ-RX3 can play music from a laptop or a USB stick. I prefer USB, since there's no laptop to set up. Export your playlists to the USB from rekordbox first (here's [how I organize my library](/blog/how-i-find-music-to-dj-with/#organizing-your-library)).
+The XDJ-RX3 can play music from a laptop or a USB stick. Export your playlists to the USB from rekordbox first (here's [how I organize my library](/blog/how-i-find-music-to-dj-with/#organizing-your-library)).
 
 When you're done, **hold the USB Stop button before pulling out the stick.** That safely ejects it.
 
