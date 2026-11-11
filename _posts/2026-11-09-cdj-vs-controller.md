@@ -18,6 +18,8 @@ A few key things work differently, and some of the most useful features aren't o
 
 ## Pioneer XDJ-RX3
 
+![The Pioneer XDJ-RX3 from above](/images/blog/xdj-rx3.webp){: width="400" height="259" style="width:400px"}
+
 ![Me playing on a Pioneer XDJ-RX3 all-in-one in a bar's DJ booth](/images/blog/xdj-rx3-bar.jpg){: width="1000" height="1250"}
 
 ### Jog wheel screens
@@ -61,6 +63,8 @@ When you're ready to take the USB out, **hold the USB Stop button first.** That 
 ![Close-up of the XDJ-RX3's USB ports with the USB Stop button outlined in red](/images/blog/xdj-rx3-usb-stop.jpg){: width="600" height="400"}
 
 ## CDJ-3000s and a DJM-900NXS2
+
+![Two Pioneer CDJ-3000s with a DJM-900NXS2 mixer between them, from above](/images/blog/cdj-djm-setup.webp){: width="450" height="212" style="width:450px"}
 
 ![Me playing on CDJ-3000s and a DJM-900NXS2 mixer at Spybar in Chicago](/images/blog/cdj-booth-spybar.jpg){: width="1000" height="1250"}
 
