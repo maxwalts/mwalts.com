@@ -1,6 +1,6 @@
 ---
 title: The non-obvious differences between the FLX4 and CDJs
-description: "What I had to relearn going from a DDJ-FLX4 to the XDJ-RX3 and CDJ-3000s: looping, jog wheels, linked waveforms, mixer FX, and the touchscreen."
+description: "Moving from a DDJ-FLX4 to an XDJ-RX3 or CDJs? Here's what works differently, the features you won't find by tinkering, and a checklist for your first gig."
 image: /images/blog/cdj-booth-spybar.jpg
 ---
 
