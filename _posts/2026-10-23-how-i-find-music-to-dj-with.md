@@ -81,4 +81,4 @@ As for safety, stick to audio files, and be wary of anything that isn't one, lik
 
 ---
 
-I DJ as Max Control. Hear my mixes on [SoundCloud](https://soundcloud.com/maxcontrol), or see more on [my homepage](/#music).
+I DJ as [Max Control](/maxcontrol/). Hear my mixes on [SoundCloud](https://soundcloud.com/maxcontrol).

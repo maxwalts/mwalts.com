@@ -115,4 +115,4 @@ So I stopped using the pad effects on the FLX4 too. If they're not part of how I
 
 ---
 
-I DJ as Max Control. Hear my mixes on [SoundCloud](https://soundcloud.com/maxcontrol), or see more on [my homepage](/#music).
+I DJ as [Max Control](/maxcontrol/). Hear my mixes on [SoundCloud](https://soundcloud.com/maxcontrol).

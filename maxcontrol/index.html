@@ -1,0 +1,354 @@
+---
+---
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Max Control – DJ in Chicago</title>
+    <meta name="description"
+        content="Max Control is a DJ in Chicago. Watch live sets, hear mixes on SoundCloud, and find upcoming shows and booking info." />
+    <link rel="canonical" href="https://mwalts.com/maxcontrol/" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Max Control – DJ in Chicago" />
+    <meta property="og:description" content="Live sets, mixes, and upcoming shows from Max Control." />
+    <meta property="og:url" content="https://mwalts.com/maxcontrol/" />
+    <meta property="og:image" content="https://mwalts.com/images/blog/cdj-booth-spybar.jpg" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="1050" />
+    <meta property="og:site_name" content="Max Walts" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ProfilePage",
+            "url": "https://mwalts.com/maxcontrol/",
+            "mainEntity": {
+                "@type": "Person",
+                "@id": "https://mwalts.com/#person",
+                "name": "Max Walts",
+                "alternateName": "Max Control",
+                "jobTitle": "DJ",
+                "homeLocation": { "@type": "City", "name": "Chicago" },
+                "url": "https://mwalts.com/",
+                "image": "https://mwalts.com/profile.jpg",
+                "sameAs": [
+                    "https://www.instagram.com/maxcontrol__/",
+                    "https://soundcloud.com/maxcontrol",
+                    "https://www.tiktok.com/@maxcontrolmusic",
+                    "https://www.youtube.com/@maxcontrolmusic"
+                ]
+            }
+        }
+    </script>
+    <style>
+        html {
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: sans-serif;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 24px;
+            box-sizing: border-box;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 16px;
+            }
+        }
+
+        h1 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        img.avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+        }
+
+        /* Same rhythm as the homepage's open sections */
+        section+section {
+            margin-top: 24px;
+        }
+
+        h2 {
+            margin: 0 0 12px;
+        }
+
+        section p,
+        section ul {
+            max-width: 65ch;
+            line-height: 1.6;
+        }
+
+        section>p:first-of-type {
+            margin-top: 0;
+        }
+
+        .photo {
+            display: block;
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+        }
+
+        iframe {
+            color-scheme: light;
+        }
+
+        .embed {
+            position: relative;
+        }
+
+        .embed iframe {
+            display: block;
+            visibility: hidden;
+        }
+
+        .embed iframe.loaded {
+            visibility: visible;
+        }
+
+        .music {
+            display: flex;
+            gap: 8px;
+        }
+
+        .music .video {
+            flex: 0 0 min(622px, 60%);
+        }
+
+        .music .video iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+        }
+
+        /* SoundCloud stretches to the video's height */
+        .music> :last-child {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .music> :last-child iframe {
+            height: 100%;
+        }
+
+        @media (max-width: 800px) {
+            .music {
+                flex-direction: column;
+            }
+
+            .music .video {
+                flex: none;
+            }
+
+            .music> :last-child iframe {
+                height: 350px;
+            }
+        }
+
+        .spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 28px;
+            height: 28px;
+            margin: -17px 0 0 -17px;
+            border: 3px solid currentColor;
+            border-right-color: transparent;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: spin 0.8s linear infinite;
+        }
+
+        iframe.loaded+.spinner {
+            display: none;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .spinner {
+                animation-duration: 3s;
+            }
+        }
+
+        button,
+        dialog textarea,
+        dialog input {
+            font: inherit;
+        }
+
+        dialog {
+            width: min(500px, calc(100vw - 32px));
+            box-sizing: border-box;
+            border: 1px solid rgba(128, 128, 128, 0.3);
+            border-radius: 8px;
+        }
+
+        dialog form>p:last-child {
+            margin-bottom: 0;
+        }
+
+        dialog h3 {
+            margin-top: 0;
+        }
+
+        dialog textarea,
+        dialog input {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        footer {
+            margin-top: auto;
+            padding-top: 48px;
+            font-size: 0.8em;
+            opacity: 0.6;
+        }
+
+        footer a {
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1><img class="avatar" src="/avatar.jpg" alt="" />Max Control</h1>
+
+        <section id="about">
+            <p>I'm Max Control, a DJ in Chicago. I've played clubs and bars around the city, including Spybar and Bourbon
+                on Division.</p>
+            <img class="photo" src="/images/blog/cdj-booth-spybar.jpg"
+                alt="Max Control playing on CDJ-3000s and a DJM-900NXS2 mixer at Spybar in Chicago" width="1000"
+                height="1050" />
+        </section>
+
+        <section id="listen">
+            <h2>Listen</h2>
+            <div class="music">
+                <div class="embed video">
+                    <iframe title="Max Control live at Bourbon on Division" frameborder="0" loading="lazy"
+                        onload="this.classList.add('loaded')" allow="encrypted-media; picture-in-picture; web-share"
+                        allowfullscreen referrerpolicy="strict-origin-when-cross-origin"
+                        src="https://www.youtube-nocookie.com/embed/t9Qd2hQrTkY"></iframe>
+                    <div class="spinner" role="status" aria-label="Loading video"></div>
+                </div>
+                <div class="embed">
+                    <iframe title="Max Control mixes on SoundCloud" width="100%" height="350" scrolling="no"
+                        frameborder="no" allow="autoplay" loading="lazy" onload="this.classList.add('loaded')"
+                        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/maxcontrol&color=%23000000&auto_play=false&show_comments=false&visual=false"></iframe>
+                    <div class="spinner" role="status" aria-label="Loading mixes"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="shows">
+            <h2>Shows</h2>
+            <p>Upcoming shows are posted on my Instagram story, <a href="https://www.instagram.com/maxcontrol__/"
+                    target="_blank">@maxcontrol__</a>.</p>
+        </section>
+
+        <section id="booking">
+            <h2>Booking</h2>
+            <p>I'll get back to you within 72 hours.</p>
+            <p><button type="button" id="booking-open">Send a booking request</button></p>
+            <dialog id="booking-dialog" closedby="any" aria-labelledby="booking-title">
+                <h3 id="booking-title">Booking request</h3>
+                <form id="booking-form" action="https://formspree.io/f/mjykplog" method="POST">
+                    <input type="hidden" name="_subject" value="Max Control booking request" />
+                    <p><textarea name="message" rows="5" placeholder="Date, venue, set length, and any other details"
+                            required></textarea></p>
+                    <p><input type="text" name="contact" placeholder="Your email or phone" required /></p>
+                    <p>
+                        <button type="submit">Send</button>
+                        <button type="button" id="booking-close">Cancel</button>
+                    </p>
+                </form>
+            </dialog>
+        </section>
+
+        <section id="writing">
+            <h2>Writing</h2>
+            <ul>
+                <li><a href="/blog/cdj-vs-controller/">The non-obvious differences between the FLX4 and CDJs</a></li>
+                <li><a href="/blog/how-i-find-music-to-dj-with/">How I find music to DJ with using Soulseek</a></li>
+            </ul>
+        </section>
+
+        <section id="follow">
+            <h2>Follow</h2>
+            <p>
+                <a href="https://www.instagram.com/maxcontrol__/" target="_blank">Instagram</a> ·
+                <a href="https://soundcloud.com/maxcontrol" target="_blank">SoundCloud</a> ·
+                <a href="https://www.tiktok.com/@maxcontrolmusic" target="_blank">TikTok</a> ·
+                <a href="https://www.youtube.com/@maxcontrolmusic" target="_blank">YouTube</a>
+            </p>
+        </section>
+    </main>
+    <footer>
+        <a href="/">Max Walts</a>
+    </footer>
+    <script>
+        // GoatCounter loads async, so hold early events until page load
+        const track = (path, title) => {
+            const send = () => window.goatcounter?.count?.({ path, title, event: true });
+            if (document.readyState === "complete") send();
+            else addEventListener("load", send, { once: true });
+        };
+        const dialog = document.getElementById("booking-dialog");
+        const booking = document.getElementById("booking-form");
+        document.getElementById("booking-open").onclick = () => {
+            dialog.showModal();
+            track("booking-open", "Opened booking form");
+        };
+        document.getElementById("booking-close").onclick = () => dialog.close();
+        booking.onsubmit = async e => {
+            e.preventDefault();
+            const send = booking.querySelector('button[type="submit"]');
+            send.disabled = true;
+            send.textContent = "Sending…";
+            const res = await fetch(booking.action, {
+                method: "POST",
+                body: new FormData(booking),
+                headers: { Accept: "application/json" }
+            }).catch(() => null);
+            track(res && res.ok ? "booking-sent" : "booking-failed", "Booking request");
+            booking.innerHTML = res && res.ok
+                ? "<p>Thanks, I'll get back to you within 72 hours.</p>"
+                : "<p>Something went wrong. Try again later.</p>";
+            booking.insertAdjacentHTML("beforeend", '<p><button type="button" onclick="this.closest(\'dialog\').close()">Close</button></p>');
+        };
+
+        document.querySelectorAll('a[target="_blank"]').forEach(a => {
+            a.addEventListener("click", () => track("out-" + a.hostname + a.pathname, "Outbound link"));
+        });
+    </script>
+    <script data-goatcounter="https://maxwalts.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+
+</html>
