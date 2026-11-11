@@ -1,7 +1,7 @@
 ---
 title: How to make a great American Psycho Halloween costume
 image: /images/blog/american-psycho-final.jpg
-description: "Patrick Bateman is a classic costume that always works. Here's everything I used for mine and where I got it."
+description: "Patrick Bateman is a costume that always works. Here's everything I used, with Amazon links, a free Canva business card template, and a DIY Walkman."
 ---
 
 American Psycho is one of my favorite movies, and Patrick Bateman is a classic Halloween costume that always works. Here's everything I used to put mine together.
