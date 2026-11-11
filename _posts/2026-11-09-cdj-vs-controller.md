@@ -44,7 +44,7 @@ Search and Menu are along the top, and the browse dial and Tag button are to the
 ![The XDJ-RX3's touchscreen with the Search and Menu tabs, the browse dial, and the Tag Track button outlined in red](/images/blog/xdj-rx3-browse.jpg){: width="600" height="400"}
 
 - **Sort your tracks.** Tap Menu while browsing to sort by BPM or key.
-- **Search by name.** Tap Search to type in a track name.
+- **Search by name.** Click the Search button to type in a track name.
 - **Scroll faster.** While browsing, hold down the dial to jump by letter or by page.
 - **Find tracks in the same key.** Tap Info on a track to see its key, then tap the key to see other tracks in that key.
 - **Preview without loading.** Hold your finger on a track's waveform to listen to it without loading it onto a deck.
