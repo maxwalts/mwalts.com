@@ -54,6 +54,8 @@ Search and Menu are along the top, and the browse dial and Tag button are to the
 
 The XDJ-RX3 can play music from a laptop or a USB stick. Export your playlists to the USB from rekordbox first (here's [how I organize my library](/blog/how-i-find-music-to-dj-with/#organizing-your-library)).
 
+To record your set onto the USB, press the Master Rec button.
+
 When you're ready to take the USB out, **hold the USB Stop button first.** That safely ejects it.
 
 ![Close-up of the XDJ-RX3's USB ports with the USB Stop button outlined in red](/images/blog/xdj-rx3-usb-stop.jpg){: width="600" height="400"}
