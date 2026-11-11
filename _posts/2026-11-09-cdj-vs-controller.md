@@ -46,7 +46,7 @@ Search and Menu are along the top, and the browse dial and Tag button are to the
 - **Sort your tracks.** Tap Menu while browsing to sort by BPM or key.
 - **Search by name.** Click the Search button to type in a track name.
 - **Scroll faster.** While browsing, hold down the dial to jump by letter or by page.
-- **Find tracks in the same key.** Tap Info on a track to see its key, then tap the key to see other tracks in that key.
+- **Find tracks in the same key.** Tap Info in the top right of the touchscreen to see a track's key, then tap the key to see other tracks in the same or a related key, for in-key mixing.
 - **Preview without loading.** Hold your finger on a track's waveform to listen to it without loading it onto a deck.
 - **Save tracks for later.** Add a track to the Tag List to "half pull" it when you know you'll want to play it soon.
 - **Check what you've played.** The History playlist lists every track from your set.
