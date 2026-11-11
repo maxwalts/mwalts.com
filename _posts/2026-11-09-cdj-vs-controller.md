@@ -28,6 +28,10 @@ Each jog wheel has a small screen in the middle. It shows things like whether vi
 
 ![Close-up of the XDJ-RX3's jog wheel screen, outlined in red](/images/blog/xdj-rx3-jog-screen.jpg){: width="600" height="400"}
 
+### Headphone cue
+
+To hear a deck in your headphones, press the orange CUE button above that channel's fader, in the middle of the mixer. Don't confuse it with the big CUE button next to the jog wheel, which sets a cue point in the track.
+
 ### Looping
 
 - **Hold down IN to set a 4-beat loop.** The loop shows up on the jog wheel screen.
@@ -77,6 +81,10 @@ Don't count on it, though. The players won't always be linked, so get used to mi
 ### Jog wheels
 
 On a CDJ, slowly turning the jog wheel barely changes anything. To nudge a track into time, use quick, sharp nudges. It's a bit like vinyl: you have to move the platter faster than the track is playing.
+
+### Headphone cue
+
+On the DJM-900NXS2, press the orange CUE button above the channel fader for the deck you want in your headphones. Check which channel each CDJ is plugged into, since it's not always 1 and 2. The CUE button on the CDJ itself sets a cue point and doesn't send anything to your headphones.
 
 ### Mixer FX and BPM
 
