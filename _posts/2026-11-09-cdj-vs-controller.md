@@ -37,7 +37,9 @@ Notice the dot next to "IN" and the line next to "4BEAT." This works the same wa
 
 ### The touchscreen
 
-The middle screen is a touchscreen, and it's where you browse your music. Search and Menu are along the top, and the browse dial and Tag button are to the right:
+The middle screen is a touchscreen, and it's where you browse your music. I didn't know it was a touchscreen at first, so I used the dial for everything. You can do that, but some things are much easier by touch.
+
+Search and Menu are along the top, and the browse dial and Tag button are to the right:
 
 ![The XDJ-RX3's touchscreen with the Search and Menu tabs, the browse dial, and the Tag Track button outlined in red](/images/blog/xdj-rx3-browse.jpg){: width="600" height="400"}
 
