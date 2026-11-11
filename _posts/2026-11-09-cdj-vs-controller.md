@@ -19,7 +19,7 @@ A few key things work differently, and some of the most useful features aren't o
 
 ## Pioneer XDJ-RX3
 
-![The Pioneer XDJ-RX3 from above](/images/blog/xdj-rx3.webp){: width="400" height="259" style="width:400px"}
+![The Pioneer XDJ-RX3 from above](/images/blog/xdj-rx3.webp){: width="1300" height="840" style="width:64vh"}
 
 ![Me playing on a Pioneer XDJ-RX3 all-in-one in a bar's DJ booth](/images/blog/xdj-rx3-bar.jpg){: width="1000" height="1250"}
 
@@ -69,7 +69,7 @@ When you're ready to take the USB out, **hold the USB Stop button first.** That 
 
 ## CDJ-3000s and a DJM-900NXS2
 
-![Two Pioneer CDJ-3000s with a DJM-900NXS2 mixer between them, from above](/images/blog/cdj-djm-setup.webp){: width="450" height="212" style="width:450px"}
+![Two Pioneer CDJ-3000s with a DJM-900NXS2 mixer between them, from above](/images/blog/cdj-djm-setup.webp){: width="1300" height="612" style="width:64vh"}
 
 ![Me playing on CDJ-3000s and a DJM-900NXS2 mixer at Spybar in Chicago](/images/blog/cdj-booth-spybar.jpg){: width="1000" height="1250"}
 
