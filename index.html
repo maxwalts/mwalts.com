@@ -230,23 +230,23 @@
             font: inherit;
         }
 
-        .guestbook,
-        .guestbook>div {
-            columns: auto;
+        dialog {
+            width: min(500px, calc(100vw - 32px));
+            box-sizing: border-box;
+            border: 1px solid rgba(128, 128, 128, 0.3);
+            border-radius: 8px;
         }
 
-        /* The form's 1em top margin (on both sides) sets the gap under each heading */
-        .guestbook h3 {
+        dialog h3 {
+            margin-top: 0;
+        }
+
+        dialog form>p:last-child {
             margin-bottom: 0;
         }
 
-        @media (min-width: 720px) {
-            .guestbook {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 32px;
-                align-items: start;
-            }
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.6);
         }
 
         /* The guestbook pads its page 4px so focus rings aren't cut off at the frame edge;
@@ -548,27 +548,25 @@
             <summary>
                 <h2>Guestbook</h2>
             </summary>
-            <div class="guestbook">
-                <div>
-                    <h3>Sign the guestbook</h3>
-                    <div class="embed">
-                        <iframe title="Guestbook" width="100%" height="450" frameborder="0" loading="lazy"
-                            onload="this.classList.add('loaded')"
-                            src="https://guestbooks.meadow.cafe/guestbook/6598"></iframe>
-                        <div class="spinner" role="status" aria-label="Loading guestbook"></div>
-                    </div>
-                </div>
-                <div>
-                    <h3 id="note">Or send a private note</h3>
-                    <form id="note-form" action="https://formspree.io/f/mjykplog" method="POST">
-                        <p><textarea name="message" rows="5" placeholder="What's on your mind?" required></textarea></p>
-                        <p><input type="text" name="name" placeholder="Name or contact info (optional)" /></p>
-                        <p><button type="submit">Send</button></p>
-                    </form>
-                </div>
+            <div class="embed">
+                <iframe title="Guestbook" width="100%" height="450" frameborder="0" loading="lazy"
+                    onload="this.classList.add('loaded')"
+                    src="https://guestbooks.meadow.cafe/guestbook/6598"></iframe>
+                <div class="spinner" role="status" aria-label="Loading guestbook"></div>
             </div>
         </details>
     </main>
+    <dialog id="note" closedby="any" aria-labelledby="note-title">
+        <h3 id="note-title">Send a private note</h3>
+        <form id="note-form" action="https://formspree.io/f/mjykplog" method="POST">
+            <p><textarea name="message" rows="5" placeholder="What's on your mind?" required></textarea></p>
+            <p><input type="text" name="name" placeholder="Name or contact info (optional)" /></p>
+            <p>
+                <button type="submit">Send</button>
+                <button type="button" onclick="this.closest('dialog').close()">Cancel</button>
+            </p>
+        </form>
+    </dialog>
     <footer>
         <a href="#note">Contact</a> ·
         <a href="https://github.com/maxwalts/mwalts.com" target="_blank">View source</a>
@@ -589,13 +587,19 @@
         const openFromHash = () => {
             const target = document.getElementById(location.hash.slice(1));
             const section = target?.closest("details");
+            if (target?.id === "note") return openNote();
             if (!section) return;
             section.open = true;
             target.scrollIntoView();
-            // Contact link (#note): put the cursor straight in the message box. A plain focus() lets
-            // phones scroll it above the keyboard the same way a tap on the box would
-            if (target.id === "note") document.querySelector("#note-form textarea").focus();
         };
+        // Contact opens the private note as a popup, so the keyboard never has to fight the page layout
+        const noteDialog = document.getElementById("note");
+        const openNote = () => {
+            if (!noteDialog.open) noteDialog.showModal();
+        };
+        noteDialog.addEventListener("close", () => {
+            if (location.hash === "#note") history.replaceState(null, "", location.pathname + location.search);
+        });
         openFromHash();
         addEventListener("hashchange", openFromHash);
 
@@ -627,12 +631,10 @@
             a.addEventListener("click", () => track("out-" + a.hostname + a.pathname, "Outbound link"));
         });
 
-        // Handle Contact in the click itself: a repeat click doesn't change the hash (so no hashchange),
-        // and phones only raise the keyboard for focus() called directly from a tap
+        // Handle Contact in the click itself so a repeat click (same hash, no hashchange) still opens it
         document.querySelector('footer a[href="#note"]').addEventListener("click", e => {
             e.preventDefault();
-            if (location.hash !== "#note") history.pushState(null, "", "#note");
-            openFromHash();
+            openNote();
             track("contact-click", "Contact link");
         });
 
@@ -661,6 +663,9 @@
         const note = document.getElementById("note-form");
         note.onsubmit = async e => {
             e.preventDefault();
+            const send = note.querySelector('button[type="submit"]');
+            send.disabled = true;
+            send.textContent = "Sending…";
             const res = await fetch(note.action, {
                 method: "POST",
                 body: new FormData(note),
@@ -670,6 +675,7 @@
             note.innerHTML = res && res.ok
                 ? "<p>Thanks, got it</p>"
                 : "<p>Something went wrong. Try again later</p>";
+            note.insertAdjacentHTML("beforeend", '<p><button type="button" onclick="this.closest(\'dialog\').close()">Close</button></p>');
         };
     </script>
     <script data-goatcounter="https://maxwalts.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
