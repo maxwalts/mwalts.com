@@ -64,6 +64,37 @@
             height: auto;
         }
 
+        /* Videos and embeds fit the column */
+        article video,
+        article iframe {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        article iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: 0;
+        }
+
+        /* Code blocks scroll sideways on small screens instead of stretching the page */
+        article pre {
+            overflow-x: auto;
+            padding: 12px 16px;
+            border-radius: 6px;
+            background: rgba(127, 127, 127, 0.12);
+            font-size: 0.85em;
+            line-height: 1.45;
+        }
+
+        article :not(pre)>code {
+            padding: 1px 4px;
+            border-radius: 4px;
+            background: rgba(127, 127, 127, 0.12);
+            font-size: 0.9em;
+        }
+
         footer {
             margin-top: auto;
             padding-top: 48px;
