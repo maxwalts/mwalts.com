@@ -3,6 +3,12 @@ title: How I built an audio-reactive ASCII visualizer for my DJ sets
 title_suffix: Max Control
 description: "A browser tool that cuts you out of your webcam, redraws you in ASCII characters, and reacts to the kick drum of your mix. How it works, with code."
 image: /images/blog/ascii-cam-hero.jpg
+video:
+  id: d-Z_tED9oJ0
+  name: "Max Control — Live at Bourbon on Division (Nov 2026) [Visualizer]"
+  description: "A DJ set by Max Control at Bourbon on Division in Chicago, with an audio-reactive ASCII visualizer."
+  upload_date: 2026-11-13T18:19:12-08:00
+  duration: PT20M58S
 ---
 
 I wanted visuals for the sets I post on YouTube. I got the idea from [this reel](https://www.instagram.com/reel/DTTEYeKjP5b/) by 303.mtl, an audio-reactive ASCII camera made in TouchDesigner. I built my own version so I could get the video out quickly.

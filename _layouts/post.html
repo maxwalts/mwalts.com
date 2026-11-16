@@ -10,6 +10,51 @@
     <title>{{ page.title }} | {{ page.title_suffix | default: site.title }}</title>
     {% seo title=false %}
     {% feed_meta %}
+    {%- comment -%}
+    Breadcrumbs: there's no /blog/ index page, so Max Control posts go Home > Max Control > Post,
+    and everything else goes Home > Post.
+    {%- endcomment -%}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Max Walts", "item": "{{ site.url }}/" },
+                {%- if page.title_suffix == "Max Control" %}
+                { "@type": "ListItem", "position": 2, "name": "Max Control", "item": "{{ site.url }}/maxcontrol/" },
+                { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": "{{ site.url }}{{ page.url }}" }
+                {%- else %}
+                { "@type": "ListItem", "position": 2, "name": {{ page.title | jsonify }}, "item": "{{ site.url }}{{ page.url }}" }
+                {%- endif %}
+            ]
+        }
+    </script>
+    {%- comment -%}
+    Posts that embed a YouTube video can describe it in front matter:
+      video:
+        id: d-Z_tED9oJ0                          # the part after watch?v=
+        name: "Video title"
+        description: "One or two sentences."
+        upload_date: 2026-11-13T18:19:12-08:00   # from YouTube
+        duration: PT20M58S                       # ISO 8601, optional
+    {%- endcomment -%}
+    {%- if page.video %}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            "name": {{ page.video.name | jsonify }},
+            "description": {{ page.video.description | default: page.description | jsonify }},
+            "thumbnailUrl": ["https://i.ytimg.com/vi/{{ page.video.id }}/maxresdefault.jpg", "https://i.ytimg.com/vi/{{ page.video.id }}/hqdefault.jpg"],
+            "uploadDate": {{ page.video.upload_date | date_to_xmlschema | jsonify }},
+            {%- if page.video.duration %}
+            "duration": {{ page.video.duration | jsonify }},
+            {%- endif %}
+            "contentUrl": "https://www.youtube.com/watch?v={{ page.video.id }}",
+            "embedUrl": "https://www.youtube.com/embed/{{ page.video.id }}"
+        }
+    </script>
+    {%- endif %}
     <style>
         html {
             -webkit-text-size-adjust: 100%;

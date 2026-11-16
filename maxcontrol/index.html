@@ -45,6 +45,16 @@
             }
         }
     </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Max Walts", "item": "https://mwalts.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Max Control", "item": "https://mwalts.com/maxcontrol/" }
+            ]
+        }
+    </script>
     <style>
         html {
             -webkit-text-size-adjust: 100%;
@@ -269,8 +279,75 @@
 
         <section id="shows">
             <h2>Shows</h2>
+            {%- comment -%} Shows come from _data/events.yml; past ones drop off at the next build {%- endcomment -%}
+            {%- assign now = site.time | date: "%s" | plus: 0 -%}
+            {%- assign upcoming = "" | split: "" -%}
+            {%- for event in site.data.events -%}
+            {%- assign starts = event.start | date: "%s" | plus: 0 -%}
+            {%- if starts > now -%}{%- assign upcoming = upcoming | push: event -%}{%- endif -%}
+            {%- endfor %}
+            {%- if upcoming.size > 0 %}
+            <ul class="shows">
+                {%- for event in upcoming %}
+                <li>
+                    <time datetime="{{ event.start }}">{{ event.start | date: "%a, %b %-d" }}</time> ·
+                    {{ event.venue }}, {{ event.city }}
+                    {%- if event.tickets %} · <a href="{{ event.tickets }}" target="_blank">Tickets</a>{% endif %}
+                </li>
+                {%- endfor %}
+            </ul>
+            <script type="application/ld+json">
+                [
+                {%- for event in upcoming %}
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "MusicEvent",
+                        "name": {{ event.name | jsonify }},
+                        "startDate": {{ event.start | jsonify }},
+                        {%- if event.end %}
+                        "endDate": {{ event.end | jsonify }},
+                        {%- endif %}
+                        "eventStatus": "https://schema.org/EventScheduled",
+                        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                        {%- if event.description %}
+                        "description": {{ event.description | jsonify }},
+                        {%- endif %}
+                        "image": "https://mwalts.com{{ event.image | default: '/images/blog/cdj-booth-spybar.jpg' }}",
+                        "location": {
+                            "@type": "Place",
+                            "name": {{ event.venue | jsonify }},
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": {{ event.street | jsonify }},
+                                "addressLocality": {{ event.city | jsonify }},
+                                "addressRegion": {{ event.region | jsonify }},
+                                "postalCode": {{ event.postal_code | jsonify }},
+                                "addressCountry": "US"
+                            }
+                        },
+                        {%- if event.tickets %}
+                        "offers": {
+                            "@type": "Offer",
+                            "url": {{ event.tickets | jsonify }},
+                            {%- if event.price != nil %}
+                            "price": {{ event.price | jsonify }},
+                            "priceCurrency": "USD",
+                            {%- endif %}
+                            "availability": "https://schema.org/InStock"
+                        },
+                        {%- endif %}
+                        "performer": { "@id": "https://mwalts.com/#person", "@type": "Person", "name": "Max Control" },
+                        "organizer": { "@type": "Organization", "name": {{ event.venue | jsonify }} }
+                    }{% unless forloop.last %},{% endunless %}
+                {%- endfor %}
+                ]
+            </script>
+            <p>More shows are posted on my Instagram story, <a href="https://www.instagram.com/maxcontrol__/"
+                    target="_blank">@maxcontrol__</a>.</p>
+            {%- else %}
             <p>Upcoming shows are posted on my Instagram story, <a href="https://www.instagram.com/maxcontrol__/"
                     target="_blank">@maxcontrol__</a>.</p>
+            {%- endif %}
         </section>
 
         <section id="booking">

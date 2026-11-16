@@ -1,0 +1,21 @@
+# Upcoming Max Control shows. Each one shows up in the Shows section of /maxcontrol/
+# with MusicEvent schema, which gets it into Google's event search.
+# Shows are hidden once their start time has passed (when the site next rebuilds).
+#
+# To add a show, copy this template below the line, remove the leading "# ", fill it in,
+# and delete the "[]" at the bottom. Keep the quotes around start and end.
+#
+# - name: "Max Control at Spybar"
+#   start: "2026-12-05T22:00:00-06:00"      # Chicago is -06:00 in winter, -05:00 in summer
+#   end: "2026-12-06T02:00:00-06:00"        # optional
+#   venue: "Spybar"
+#   street: "646 N Franklin St"
+#   city: "Chicago"
+#   region: "IL"
+#   postal_code: "60654"
+#   tickets: "https://example.com/tickets"  # optional
+#   price: 20                               # optional, in USD (0 for free)
+#   description: "One or two sentences."    # optional
+#   image: /images/blog/cdj-booth-spybar.jpg  # optional, defaults to the Spybar photo
+# ----------------------------------------------------------------------------------------
+[]
